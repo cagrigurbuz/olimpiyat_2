@@ -1,0 +1,1760 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Olimpiyat Defteri</title>
+<meta name="description" content="5. sınıf matematik olimpiyatı hazırlığı: konu özetleri, ipuçlu sorular, adım adım çözümler, süreli deneme sınavı.">
+<meta name="theme-color" content="#3B4CCA">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Olimpiyat">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+html{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+:root{
+  --paper:#F5F7FB; --grid:rgba(59,76,202,.075); --surface:#FFFFFF; --surface-2:#F0F2FA;
+  --ink:#1B2340; --muted:#5A6484; --line:#D8DDEB;
+  --accent:#3B4CCA; --accent-ink:#FFFFFF; --accent-soft:#E7EAFB;
+  --mark:#FFE066; --good:#1E8A5A; --good-soft:#E2F4EB; --bad:#C63A4E; --bad-soft:#FBE7EA;
+  --shadow:0 1px 2px rgba(27,35,64,.06),0 6px 20px rgba(27,35,64,.06);
+  --r:14px;
+  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#11162A; --grid:rgba(150,165,255,.06); --surface:#1A2038; --surface-2:#222947;
+    --ink:#E9ECF8; --muted:#A0A8C6; --line:#2E3657;
+    --accent:#8E9BFF; --accent-ink:#11162A; --accent-soft:#262E55;
+    --mark:#C9A51E; --good:#4FC98F; --good-soft:#15342A; --bad:#FF7486; --bad-soft:#3B1D27;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#11162A; --grid:rgba(150,165,255,.06); --surface:#1A2038; --surface-2:#222947;
+  --ink:#E9ECF8; --muted:#A0A8C6; --line:#2E3657;
+  --accent:#8E9BFF; --accent-ink:#11162A; --accent-soft:#262E55;
+  --mark:#C9A51E; --good:#4FC98F; --good-soft:#15342A; --bad:#FF7486; --bad-soft:#3B1D27;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.55;
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;
+  padding-inline:16px; padding-block:0 96px;
+}
+.wrap{max-width:1040px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance;letter-spacing:-.005em}
+button{font:inherit;color:inherit}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
+.hl{background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);padding:0 .08em}
+.muted{color:var(--muted)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:18px 10px}
+.brand{display:flex;align-items:center;gap:10px;background:none;border:0;cursor:pointer;padding:0}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:19px;transform:rotate(-4deg)}
+.brand h1{font-size:24px;font-weight:800}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.chip b{font-family:var(--display);font-size:16px}
+.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px;margin-block:6px 18px;overflow-x:auto}
+.tab{flex:1 0 auto;border:0;background:none;padding:9px 14px;border-radius:9px;font-weight:800;cursor:pointer;color:var(--muted);white-space:nowrap}
+.tab[aria-current="true"]{background:var(--accent);color:var(--accent-ink)}
+.tab .count{display:inline-block;min-width:20px;padding:0 6px;margin-left:6px;border-radius:999px;background:var(--bad);color:#fff;font-size:12px;line-height:20px}
+
+/* generic */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:11px;padding:11px 18px;font-weight:800;cursor:pointer;border:1.5px solid var(--line);background:var(--surface);text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent}
+.btn.small{padding:7px 12px;font-size:14px;border-radius:9px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.back{background:none;border:0;cursor:pointer;color:var(--muted);font-weight:800;padding:4px 0;margin-bottom:6px}
+.back:hover{color:var(--accent)}
+
+/* home */
+.hello{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:end;margin-bottom:22px}
+.hello h2{font-size:clamp(28px,4.4vw,40px);font-weight:800}
+.hello p{margin:.4em 0 0;color:var(--muted);max-width:52ch}
+.name-edit{display:inline-flex;gap:6px;align-items:center}
+.name-edit input{font:inherit;font-size:16px;padding:6px 10px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);width:160px}
+.linkbtn{background:none;border:0;padding:0;color:var(--accent);font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);padding:14px 6px}
+.summary div{padding:0 12px;border-left:1px solid var(--line)}
+.summary div:first-child{border-left:0}
+.summary b{display:block;font-family:var(--display);font-size:26px;line-height:1.1;font-variant-numeric:tabular-nums}
+.summary span{font-size:13px;color:var(--muted);font-weight:700}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.sec-h h3{font-size:22px}
+.topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.tcard{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;align-items:center;padding:14px;cursor:pointer;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:var(--r);transition:transform .12s ease,border-color .12s}
+.tcard:hover{transform:translateY(-2px);border-color:var(--accent)}
+.glyph{grid-row:span 2;width:50px;height:50px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.02em}
+.tcard h4{margin:0;font-family:var(--display);font-size:17px;line-height:1.2}
+.tmeta{font-size:13px;color:var(--muted);font-weight:700;display:flex;justify-content:space-between;gap:6px}
+.bar{grid-column:1/-1;height:7px;background:var(--surface-2);border-radius:99px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.tips{margin-top:26px;padding:18px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tips h4{margin:0 0 4px;font-family:var(--display);font-size:17px}
+.tips p{margin:0;font-size:14px;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* topic page */
+.thead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.thead h2{font-size:clamp(26px,4vw,34px)}
+.seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:3px;gap:3px}
+.seg button{border:0;background:none;border-radius:8px;padding:7px 14px;font-weight:800;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent)}
+.lesson{padding:22px 24px;display:grid;gap:18px}
+.lesson ul{margin:0;padding-left:1.2em;display:grid;gap:8px;max-width:70ch}
+.tactic{background:var(--accent-soft);border-radius:12px;padding:14px 16px;max-width:70ch}
+.example{border:1.5px dashed var(--line);border-radius:12px;padding:14px 16px;max-width:70ch}
+.example .ans{margin-top:8px}
+
+/* practice */
+.practice{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:16px;align-items:start}
+.qcard{padding:22px 24px}
+.qtop{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.lv{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--muted)}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--accent)}
+.qtext{font-size:19px;line-height:1.6;margin:0 0 14px;max-width:62ch}
+.fig{display:block;max-width:100%;height:auto;margin:6px 0 16px;overflow:visible}
+.fig line,.fig rect,.fig polygon,.fig polyline{stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.fig text{fill:var(--muted);font:700 13px var(--body)}
+.fig .pt{fill:var(--accent);stroke:none}
+.choices{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.choice{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:10px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;min-height:52px}
+.choice:hover:not([disabled]){border-color:var(--accent);background:var(--accent-soft)}
+.choice .L{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line);font-family:var(--display);font-weight:800;font-size:15px;color:var(--muted)}
+.choice.sel{border-color:var(--accent);background:var(--accent-soft)}
+.choice.sel .L{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.choice.ok{border-color:var(--good);background:var(--good-soft)}
+.choice.ok .L{background:var(--good);border-color:var(--good);color:#fff}
+.choice.no{border-color:var(--bad);background:var(--bad-soft)}
+.choice.no .L{background:var(--bad);border-color:var(--bad);color:#fff}
+.choice[disabled]{cursor:default}
+.choice.dim{opacity:.55}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.86em;line-height:1.15;margin:0 .12em}
+.fr span:first-child{border-bottom:1.6px solid currentColor;padding:0 .18em}
+.qfoot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.hint{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--surface-2);font-size:15px;max-width:66ch}
+.hint b.t{font-family:var(--display);color:var(--accent)}
+.fb{margin-top:16px;border-radius:12px;padding:14px 16px}
+.fb.good{background:var(--good-soft)}
+.fb.bad{background:var(--bad-soft)}
+.fb h4{margin:0 0 6px;font-family:var(--display);font-size:19px}
+.fb.good h4{color:var(--good)}
+.fb.bad h4{color:var(--bad)}
+.steps{margin:0;padding-left:1.3em;display:grid;gap:5px;font-size:15.5px}
+.side{padding:16px 18px;display:grid;gap:14px}
+.side .big{font-family:var(--display);font-size:32px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.levels{display:grid;gap:6px}
+.levels button{display:flex;justify-content:space-between;align-items:center;border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 12px;font-weight:800;cursor:pointer}
+.levels button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.kbd{font-size:12px;color:var(--muted)}
+.kbd kbd{font-family:var(--body);font-weight:800;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:0 5px;background:var(--surface)}
+
+/* exam */
+.exam-setup{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+.form{padding:22px 24px;display:grid;gap:16px}
+.field{display:grid;gap:6px}
+.field label,.field .lab{font-weight:800}
+.field select{font:inherit;padding:9px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);max-width:260px}
+.check{display:flex;gap:10px;align-items:flex-start}
+.check input{width:20px;height:20px;margin-top:3px;accent-color:var(--accent)}
+.hist{padding:20px 22px}
+.hist svg{width:100%;height:auto;display:block}
+.hist svg text{fill:var(--muted);font:700 11px var(--body)}
+.hist svg .b{fill:var(--accent)}
+.hist svg .axis{stroke:var(--line)}
+.hist ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px;font-size:14px}
+.hist li{display:flex;justify-content:space-between;gap:8px;border-top:1px solid var(--line);padding-top:4px;font-variant-numeric:tabular-nums}
+.ebar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 14px;margin-bottom:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+.timer{font-family:var(--display);font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.timer.low{color:var(--bad)}
+.nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:6px}
+.nav button{height:36px;border-radius:9px;border:1.5px solid var(--line);background:var(--surface);font-weight:800;cursor:pointer;font-variant-numeric:tabular-nums}
+.nav button.done{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.nav button.cur{outline:2.5px solid var(--ink);outline-offset:1px}
+.nav button.ok{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.nav button.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-weight:700}
+.result{padding:22px 24px;display:grid;gap:18px}
+.score{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end}
+.score .main{font-family:var(--display);font-size:64px;font-weight:800;line-height:.9;font-variant-numeric:tabular-nums}
+.score .main small{font-size:22px;color:var(--muted)}
+.kv{display:grid;grid-template-columns:repeat(4,auto);gap:4px 22px;font-variant-numeric:tabular-nums}
+.kv b{font-family:var(--display);font-size:24px;display:block;line-height:1.1}
+.kv span{font-size:13px;color:var(--muted);font-weight:700}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+td.n,th.n{text-align:right}
+details.rev{border:1px solid var(--line);border-radius:12px;padding:10px 14px;background:var(--surface)}
+details.rev+details.rev{margin-top:8px}
+details.rev summary{cursor:pointer;font-weight:700;display:flex;gap:10px;align-items:baseline}
+details.rev summary .tag{flex:none;font-size:12px;font-weight:800;padding:1px 8px;border-radius:99px}
+.tag.ok{background:var(--good-soft);color:var(--good)}
+.tag.no{background:var(--bad-soft);color:var(--bad)}
+.tag.bos{background:var(--surface-2);color:var(--muted)}
+details.rev .body{padding-top:10px;display:grid;gap:10px}
+
+/* mistakes */
+.mlist{display:grid;gap:8px}
+.mitem{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:12px 14px}
+.mitem p{margin:2px 0 0;font-size:15px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.x{border:0;background:none;cursor:pointer;color:var(--muted);font-size:20px;line-height:1;padding:6px 8px;border-radius:8px}
+.x:hover{background:var(--bad-soft);color:var(--bad)}
+.empty{padding:30px 24px;text-align:center}
+.empty h3{font-size:22px;margin-bottom:6px}
+
+/* scratch pad */
+#padBtn{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;box-shadow:var(--shadow)}
+#pad{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(0,0,0,.12);padding:10px 16px calc(12px + env(safe-area-inset-bottom,0px))}
+#pad .padbar{max-width:1040px;margin:0 auto 8px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+#pad canvas{display:block;width:100%;max-width:1040px;height:min(42vh,340px);margin:0 auto;border-radius:12px;border:1px solid var(--line);touch-action:none;cursor:crosshair;
+  background-color:var(--surface);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:20px 20px}
+.pen{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);cursor:pointer}
+.pen[aria-pressed="true"]{outline:2.5px solid var(--ink);outline-offset:2px}
+
+@media (max-width:820px){
+  .practice,.exam-setup{grid-template-columns:1fr}
+  .hello{grid-template-columns:1fr}
+  .tips{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .summary{grid-template-columns:repeat(2,1fr);row-gap:12px}
+  .summary div:nth-child(3){border-left:0}
+  .qcard,.lesson,.form,.result{padding:18px 16px}
+  .qtext{font-size:17.5px}
+  .kv{grid-template-columns:repeat(2,auto)}
+  .tab{padding:8px 10px;font-size:14px}
+  .summary span{font-size:12px}
+  .score .main{font-size:52px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@keyframes pop{0%{transform:scale(.97)}60%{transform:scale(1.01)}100%{transform:scale(1)}}
+.fb{animation:pop .25s ease}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="top">
+    <button class="brand" data-act="home" aria-label="Ana sayfa">
+      <span class="brand-mark">∑</span>
+      <h1>Olimpiyat <span class="hl">Defteri</span></h1>
+    </button>
+    <div class="chips" id="chips"></div>
+  </header>
+  <nav class="tabs" id="tabs" aria-label="Bölümler"></nav>
+  <main id="view"></main>
+</div>
+
+<button class="btn" id="padBtn" data-act="pad">✎ Karalama</button>
+<div id="pad" hidden>
+  <div class="padbar">
+    <strong>Karalama kâğıdı</strong>
+    <div class="row">
+      <button class="pen" data-pen="ink" style="background:var(--ink)" aria-pressed="true" aria-label="Koyu kalem"></button>
+      <button class="pen" data-pen="accent" style="background:var(--accent)" aria-pressed="false" aria-label="Mavi kalem"></button>
+      <button class="pen" data-pen="bad" style="background:var(--bad)" aria-pressed="false" aria-label="Kırmızı kalem"></button>
+      <button class="btn small" id="padClear">Temizle</button>
+      <button class="btn small primary" data-act="pad">Kapat</button>
+    </div>
+  </div>
+  <canvas id="padCanvas" aria-label="Karalama alanı"></canvas>
+</div>
+
+<script>
+/* ===== Olimpiyat Defteri — soru bankası ===== */
+const R = (a, b) => a + Math.floor(Math.random() * (b - a + 1));
+const pick = a => a[Math.floor(Math.random() * a.length)];
+function shuffle(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+const gcd = (a, b) => b ? gcd(b, a % b) : a;
+const lcm = (a, b) => a / gcd(a, b) * b;
+const fmt = n => typeof n === 'number' ? n.toLocaleString('tr-TR') : String(n);
+const fr = (p, q) => `<span class="fr"><span>${p}</span><span>${q}</span></span>`;
+const pad2 = n => String(n).padStart(2, '0');
+const toTime = m => { m = ((m % 1440) + 1440) % 1440; return pad2(Math.floor(m / 60)) + ':' + pad2(m % 60); };
+const GUNLER = ['Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'];
+const AYLAR = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+const AYGUN = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const GEN = { 3: "3'ün", 9: "9'un", 4: "4'ün", 6: "6'nın", 5: "5'in", 2: "2'nin", 15: "15'in", 12: "12'nin", 18: "18'in", 36: "36'nın", 45: "45'in", 10: "10'un" };
+const BOLKURAL = {
+  2: 'Birler basamağı çift (0, 2, 4, 6, 8) olmalı.',
+  3: 'Rakamlarının toplamı 3’ün katı olmalı.',
+  4: 'Son iki basamağın oluşturduğu sayı 4’ün katı olmalı.',
+  5: 'Birler basamağı 0 ya da 5 olmalı.',
+  6: 'Hem 2 hem 3 ile bölünmeli: birler basamağı çift ve rakamlar toplamı 3’ün katı.',
+  9: 'Rakamlarının toplamı 9’un katı olmalı.',
+  10: 'Birler basamağı 0 olmalı.',
+  12: 'Hem 3 hem 4 ile bölünmeli: rakamlar toplamı 3’ün katı, son iki basamak 4’ün katı.',
+  15: 'Hem 3 hem 5 ile bölünmeli: birler basamağı 0 ya da 5, rakamlar toplamı 3’ün katı.',
+  18: 'Hem 2 hem 9 ile bölünmeli: birler basamağı çift, rakamlar toplamı 9’un katı.',
+  36: 'Hem 4 hem 9 ile bölünmeli: son iki basamak 4’ün katı, rakamlar toplamı 9’un katı.',
+  45: 'Hem 5 hem 9 ile bölünmeli: birler basamağı 0 ya da 5, rakamlar toplamı 9’un katı.'
+};
+
+function finish(o, opts, correctIdx, sortNum) {
+  let order = opts.map((t, i) => ({ t, c: i === correctIdx, v: o._vals ? o._vals[i] : i }));
+  order = sortNum ? order.sort((a, b) => a.v - b.v) : shuffle(order);
+  return { topic: o.topic, level: o.level, text: o.text, fig: o.fig || '', choices: order.map(x => x.t), correct: order.findIndex(x => x.c), hint: o.hint || '', sol: o.sol || '' };
+}
+/* Sayısal cevaplı soru: doğru cevap + mantıklı çeldiriciler, küçükten büyüğe sıralı */
+function numQ(o) {
+  const ans = o.ans, set = new Set([ans]), ds = [];
+  for (const d of (o.distract || [])) {
+    if (ds.length === 4) break;
+    if (Number.isInteger(d) && d >= (o.min ?? 0) && !set.has(d)) { set.add(d); ds.push(d); }
+  }
+  let tries = 0; const spread = Math.max(2, Math.round(Math.abs(ans) * 0.12));
+  while (ds.length < 4 && tries < 500) {
+    tries++;
+    const d = ans + (Math.random() < .5 ? -1 : 1) * R(1, spread + Math.floor(tries / 20));
+    if (d >= (o.min ?? 0) && !set.has(d)) { set.add(d); ds.push(d); }
+  }
+  const vals = [ans, ...ds];
+  o._vals = vals;
+  return finish(o, vals.map(v => o.show ? o.show(v) : fmt(v)), 0, true);
+}
+/* Metin cevaplı soru */
+function txtQ(o, correct, wrongs) {
+  const ws = [...new Set(wrongs.filter(w => w !== correct))].slice(0, 4);
+  return finish(o, [correct, ...ws], 0, false);
+}
+const steps = arr => '<ol class="steps">' + arr.map(s => `<li>${s}</li>`).join('') + '</ol>';
+
+/* ---------- SVG çizim yardımcıları ---------- */
+function svgGrid(cols, rows, opts = {}) {
+  const s = 34, pad = 18, w = cols * s + pad * 2, h = rows * s + pad * 2;
+  let g = `<svg class="fig" viewBox="0 0 ${w} ${h}" width="${Math.min(w, 300)}" role="img" aria-label="${cols}×${rows} kareli şekil">`;
+  for (let i = 0; i <= cols; i++) g += `<line x1="${pad + i * s}" y1="${pad}" x2="${pad + i * s}" y2="${pad + rows * s}" />`;
+  for (let j = 0; j <= rows; j++) g += `<line x1="${pad}" y1="${pad + j * s}" x2="${pad + cols * s}" y2="${pad + j * s}" />`;
+  if (opts.ab) {
+    g += `<circle class="pt" cx="${pad}" cy="${pad + rows * s}" r="5"/><text x="${pad - 14}" y="${pad + rows * s + 14}">A</text>`;
+    g += `<circle class="pt" cx="${pad + cols * s}" cy="${pad}" r="5"/><text x="${pad + cols * s + 4}" y="${pad - 5}">B</text>`;
+  }
+  return g + '</svg>';
+}
+function svgSticks(kind, n) {
+  // kind: 'kare' | 'ucgen' ; n figür 1..3 yan yana gösterilir
+  const s = 26; let x0 = 10, out = '', totalW = 0;
+  const figs = [1, 2, 3];
+  figs.forEach(k => {
+    if (kind === 'kare') {
+      for (let i = 0; i <= k; i++) out += `<line x1="${x0 + i * s}" y1="10" x2="${x0 + i * s}" y2="${10 + s}"/>`;
+      out += `<line x1="${x0}" y1="10" x2="${x0 + k * s}" y2="10"/><line x1="${x0}" y1="${10 + s}" x2="${x0 + k * s}" y2="${10 + s}"/>`;
+      out += `<text x="${x0 + k * s / 2}" y="${10 + s + 20}" text-anchor="middle">${k}. şekil</text>`;
+      x0 += k * s + 34;
+    } else {
+      // k tane üçgen (aşağı-yukarı dönüşümlü şerit)
+      const hh = s * 0.87; const top = 10, bot = 10 + hh;
+      for (let i = 0; i < k; i++) {
+        const bx = x0 + Math.floor(i / 2) * s;
+        if (i % 2 === 0) { out += `<polyline points="${bx},${bot} ${bx + s / 2},${top} ${bx + s},${bot} ${bx},${bot}" fill="none"/>`; }
+        else { out += `<polyline points="${bx + s / 2},${top} ${bx + s * 1.5},${top} ${bx + s},${bot}" fill="none"/>`; }
+      }
+      const wdt = Math.ceil(k / 2) * s + (k % 2 === 0 ? s / 2 : 0);
+      out += `<text x="${x0 + wdt / 2}" y="${bot + 20}" text-anchor="middle">${k}. şekil</text>`;
+      x0 += wdt + 34;
+    }
+  });
+  totalW = x0;
+  return `<svg class="fig" viewBox="0 0 ${totalW} 70" width="${Math.min(totalW, 340)}" role="img" aria-label="Kibrit çöpü şekilleri">${out}</svg>`;
+}
+function svgSquaresRow(k) {
+  const s = 30, w = k * s + 20;
+  let g = `<svg class="fig" viewBox="0 0 ${w} ${s + 20}" width="${Math.min(w, 320)}" role="img" aria-label="Yan yana ${k} kare">`;
+  for (let i = 0; i < k; i++) g += `<rect x="${10 + i * s}" y="10" width="${s}" height="${s}" />`;
+  return g + '</svg>';
+}
+function svgFan(n) { // tepeden tabana n doğru parçası
+  const w = 260, h = 150, ax = 130, ay = 12, bl = 16, br = 244, by = 138;
+  let g = `<svg class="fig" viewBox="0 0 ${w} ${h + 8}" width="260" role="img" aria-label="Tepeden tabana çizilen doğru parçaları olan üçgen"><polygon points="${ax},${ay} ${bl},${by} ${br},${by}" fill="none"/>`;
+  for (let i = 1; i <= n; i++) { const x = bl + (br - bl) * i / (n + 1); g += `<line x1="${ax}" y1="${ay}" x2="${x}" y2="${by}"/>`; }
+  return g + '</svg>';
+}
+
+/* ================= KONULAR ================= */
+const TOPICS = [];
+const T = (id, name, glyph, lesson, gens) => TOPICS.push({ id, name, glyph, lesson, gens });
+
+/* ---------- 1. Sayılar ve Basamaklar ---------- */
+function pagesDigits(n) { let d = 0; for (let i = 1; i <= n; i++) d += String(i).length; return d; }
+function pagesSol(n) {
+  const a = [];
+  a.push('1–9 arası: 9 sayfa × 1 rakam = <b>9</b> rakam');
+  if (n >= 10) { const k = Math.min(n, 99) - 9; a.push(`10–${Math.min(n, 99)} arası: ${k} sayfa × 2 rakam = <b>${k * 2}</b> rakam`); }
+  if (n >= 100) { const k = n - 99; a.push(`100–${n} arası: ${k} sayfa × 3 rakam = <b>${k * 3}</b> rakam`); }
+  a.push(`Toplam: <b>${fmt(pagesDigits(n))}</b> rakam`);
+  return a;
+}
+const digSum = n => String(n).split('').reduce((s, c) => s + +c, 0);
+const distinct = n => new Set(String(n)).size === String(n).length;
+
+T('basamak', 'Sayılar ve Basamaklar', '123', {
+  facts: [
+    'Bir sayıdaki her rakamın bir <b>basamak değeri</b> vardır: 473 = 4×100 + 7×10 + 3.',
+    '1–9 arası 9 tane tek basamaklı, 10–99 arası 90 tane iki basamaklı, 100–999 arası 900 tane üç basamaklı sayı vardır.',
+    'Bir sayının rakamlarının yerini değiştirmek değerini büyük ölçüde değiştirir: abc − cba her zaman 99’un katıdır.',
+    'Rakam = 0,1,…,9 sembolleri. Sayı = rakamlardan oluşan değer. “Kaç rakam kullanılır” ile “kaç sayı var” farklı sorulardır!'
+  ],
+  tactic: 'Sayıları <b>basamak sayısına göre gruplara</b> ayır ve her grubu ayrı say. Uzun listeyi yazmak yerine kural bul.',
+  example: { q: '120 sayfalık bir kitabın sayfa numaraları için kaç rakam kullanılır?', a: '1–9: 9 rakam, 10–99: 90×2 = 180 rakam, 100–120: 21×3 = 63 rakam. Toplam 9 + 180 + 63 = <b>252</b>.' }
+}, [
+  l => {
+    const n = l === 1 ? R(30, 99) : l === 2 ? R(100, 250) : R(250, 999);
+    const d = pagesDigits(n);
+    return numQ({ topic: 'basamak', level: l, ans: d,
+      text: `${n} sayfalık bir kitabın sayfaları 1 numaradan başlanarak sırayla numaralandırılıyor. Bu iş için toplam kaç rakam kullanılır?`,
+      distract: [n, d - 9, d + 9, n * 2, n >= 100 ? n * 3 : d + 18, d - 1],
+      hint: 'Sayfaları gruplara ayır: tek basamaklı (1–9), iki basamaklı (10–99), üç basamaklı (100 ve sonrası).',
+      sol: steps(pagesSol(n)) });
+  },
+  l => {
+    const n = l === 1 ? R(20, 99) : l === 2 ? R(100, 300) : R(300, 999);
+    const d = pagesDigits(n);
+    const s = n < 100
+      ? [`İlk 9 sayfa 9 rakam kullanır. Kalan: ${d} − 9 = ${d - 9} rakam.`, `Bu rakamlar iki basamaklı sayfalara gider: ${d - 9} ÷ 2 = ${(d - 9) / 2} sayfa.`, `Toplam sayfa: 9 + ${(d - 9) / 2} = <b>${n}</b>`]
+      : [`1–99 arası sayfalar 9 + 180 = 189 rakam kullanır.`, `Kalan: ${d} − 189 = ${d - 189} rakam. Bunlar üç basamaklı sayfalara gider.`, `${d - 189} ÷ 3 = ${(d - 189) / 3} tane üç basamaklı sayfa var.`, `Toplam sayfa: 99 + ${(d - 189) / 3} = <b>${n}</b>`];
+    return numQ({ topic: 'basamak', level: l, ans: n,
+      text: `Bir kitabın sayfaları 1 numaradan başlanarak sırayla numaralandırılıyor ve toplam <b>${fmt(d)}</b> rakam kullanılıyor. Kitap kaç sayfadır?`,
+      distract: [Math.round(d / 3), Math.round(d / 2), n + 1, n - 1, n + 3],
+      hint: 'Önce 1–9 ve 10–99 arasındaki sayfaların kaç rakam kullandığını hesapla, sonra kalan rakamları paylaştır.',
+      sol: steps(s) });
+  },
+  l => {
+    let S, ans, list;
+    for (let t = 0; t < 50; t++) {
+      S = l === 1 ? R(5, 20) : l === 2 ? R(6, 22) : R(8, 23);
+      list = [];
+      for (let x = 100; x <= 999; x++) if (digSum(x) === S && (l === 1 || distinct(x)) && (l < 3 || x % 2 === 0)) list.push(x);
+      if (list.length) break;
+    }
+    const big = l === 3;
+    ans = big ? list[list.length - 1] : list[0];
+    let wrong = [];
+    for (let x = 100; x <= 999; x++) if (digSum(x) === S) wrong.push(x);
+    const d = big ? [wrong[wrong.length - 1], list[list.length - 2], list[list.length - 3], ans - 18]
+      : [list[1], list[2], wrong[0], (() => { for (let x = 100; x < 999; x++) if (digSum(x) === S - 1) return x; })()];
+        const what = big ? 'en büyük üç basamaklı çift sayı' : 'en küçük üç basamaklı sayı';
+    return numQ({ topic: 'basamak', level: l, ans,
+      text: l === 1 ? `Rakamlarının toplamı ${S} olan en küçük üç basamaklı sayı kaçtır?` : `Rakamları birbirinden farklı ve rakamlarının toplamı ${S} olan ${what} kaçtır?`,
+      distract: d,
+      hint: big ? 'En büyük sayı için yüzler basamağına mümkün olan en büyük rakamı koy. Sayının çift olması için birler basamağına dikkat et.' : 'En küçük sayı için yüzler basamağına mümkün olan en küçük rakamı koy, büyük rakamları sağa (birler basamağına) it.',
+      sol: steps([big ? 'Yüzler basamağı olabildiğince büyük seçilir, sonra onlar basamağı.' : 'Yüzler basamağı olabildiğince küçük seçilir; kalan toplamı onlar ve birler basamağı taşır, birler basamağı en büyük rakamı alır.',
+        l > 1 ? 'Rakamların birbirinden farklı olması şartını kontrol ederiz.' : 'Rakamlar tekrar edebilir.',
+        `Şartları sağlayan ${big ? 'en büyük' : 'en küçük'} sayı <b>${ans}</b> (${String(ans).split('').join(' + ')} = ${S}).`]) });
+  },
+  l => {
+    if (l < 3) {
+      const a = R(3, 9), c = R(1, a - 1), b = R(0, 9);
+      const ans = 99 * (a - c);
+      const shown = l === 1 ? `${a}${b}${c}` : `${a}B${c}`;
+      return numQ({ topic: 'basamak', level: l, ans,
+        text: `Üç basamaklı <b>${shown}</b> sayısının${l === 2 ? ' (B bir rakam)' : ''} yüzler basamağındaki rakam ile birler basamağındaki rakam yer değiştiriyor. Oluşan yeni sayı, ilk sayıdan kaç eksiktir?`,
+        distract: [100 * (a - c), 90 * (a - c), 99 * (a - c + 1), 11 * (a - c), 9 * (a - c)],
+        hint: 'Sayıyı basamak değerleriyle yaz: 100·a + 10·b + c. Yer değiştirince ne olur?',
+        sol: steps([`İlk sayı: 100·${a} + 10·B + ${c}`, `Yeni sayı: 100·${c} + 10·B + ${a}`, `Fark: 99·${a} − 99·${c} = 99 × ${a - c} = <b>${ans}</b>`, 'Ortadaki rakam farkı hiç etkilemez!']) });
+    }
+    const k = R(2, 7), ans = 10 * (9 - k);
+    return numQ({ topic: 'basamak', level: 3, ans,
+      text: `Üç basamaklı <b>abc</b> sayısı ile rakamları ters sırada yazılarak elde edilen üç basamaklı <b>cba</b> sayısı arasındaki fark abc − cba = ${99 * k} oluyor. Bu şartı sağlayan kaç tane abc sayısı vardır?`,
+      distract: [9 - k, 10 * (10 - k), 9 * (9 - k), 10 * (8 - k), 10 * (9 - k) + 10],
+      hint: 'abc − cba = 99·(a − c). O halde a − c kaç olmalı? c sıfır olabilir mi?',
+      sol: steps([`abc − cba = 99·(a − c) = ${99 * k} ⇒ a − c = ${k}`, `cba üç basamaklı olduğu için c ≥ 1. (a, c) çiftleri: c = 1, 2, …, ${9 - k} ⇒ ${9 - k} çift.`, `b rakamı serbest: 10 seçenek.`, `Toplam: ${9 - k} × 10 = <b>${ans}</b>`]) });
+  },
+  l => {
+    const S = l === 1 ? R(2, 4) : l === 2 ? R(5, 8) : R(9, 13);
+    let list = []; for (let x = 100; x <= 999; x++) if (digSum(x) === S) list.push(x);
+    const ans = list.length;
+    // yüzler basamağına göre dağılım
+    const by = {}; list.forEach(x => { const h = Math.floor(x / 100); by[h] = (by[h] || 0) + 1; });
+    return numQ({ topic: 'basamak', level: l, ans,
+      text: `Rakamlarının toplamı ${S} olan kaç tane üç basamaklı sayı vardır?`,
+      distract: [ans - 1, ans + 1, ans + S, ans - S, S * 3],
+      hint: 'Yüzler basamağını sırayla 1, 2, 3, … diye sabitle. Her durumda onlar + birler toplamının kaç farklı şekilde yazılabileceğini say.',
+      sol: steps(Object.keys(by).map(h => `Yüzler basamağı ${h}: onlar + birler = ${S - h} ⇒ ${by[h]} sayı`).concat([`Toplam: <b>${ans}</b>`])) });
+  }
+]);
+
+/* ---------- 2. Bölünebilme ve Asal Sayılar ---------- */
+const isPrime = n => { if (n < 2) return false; for (let i = 2; i * i <= n; i++) if (n % i === 0) return false; return true; };
+T('bolunebilme', 'Bölünebilme ve Asallar', '÷', {
+  facts: [
+    '<b>2</b>: son rakam çift. <b>5</b>: son rakam 0 ya da 5. <b>10</b>: son rakam 0.',
+    '<b>3</b> ve <b>9</b>: rakamlar toplamı 3’ün (9’un) katı. <b>4</b>: son iki basamak 4’ün katı.',
+    '<b>6</b> = 2 ve 3, <b>12</b> = 3 ve 4, <b>15</b> = 3 ve 5, <b>18</b> = 2 ve 9, <b>45</b> = 5 ve 9 kurallarının ikisi birden.',
+    '1’den N’ye kadar k’nin katı olan sayıların adedi = N ÷ k bölümünün tam kısmı.',
+    '<b>Asal sayı</b>: 1’den büyük, yalnızca 1’e ve kendisine bölünen sayı. 2 tek çift asaldır. 1 asal değildir!',
+    'Kalan kuralı: toplamın ya da çarpımın kalanı, kalanların toplamı ya da çarpımıyla bulunur.'
+  ],
+  tactic: 'Bilinmeyen rakamlı sorularda önce <b>son rakam</b> kurallarını (2, 5, 10, 4) uygula, sonra rakam toplamı kurallarına (3, 9) geç. Böylece seçenekler hızla azalır.',
+  example: { q: '1 ile 100 arasında 3 ile veya 5 ile bölünebilen kaç sayı vardır?', a: '3’ün katı: 33, 5’in katı: 20. İkisine birden bölünenler (15’in katları) iki kez sayıldı: 6. Cevap 33 + 20 − 6 = <b>47</b>.' }
+}, [
+  l => {
+    if (l === 1) {
+      const k = R(3, 9), N = R(40, 150), ans = Math.floor(N / k);
+      return numQ({ topic: 'bolunebilme', level: 1, ans, text: `1 ile ${N} arasındaki (ikisi de dahil) sayılardan kaç tanesi ${k} ile tam bölünür?`,
+        distract: [ans + 1, ans - 1, Math.round(N / k) === ans ? ans + 2 : Math.round(N / k)],
+        hint: `${k} ile bölünenler: ${k}, ${2 * k}, ${3 * k}, … Sonuncusu ${N} sayısını geçmemeli.`,
+        sol: steps([`${N} ÷ ${k} = ${ans}, kalan ${N % k}.`, `Yani ${k}×1, ${k}×2, …, ${k}×${ans} sayıları uygun: <b>${ans}</b> tane.`]) });
+    }
+    if (l === 2) {
+      const k = R(4, 12), L = R(20, 120), Rr = L + R(80, 300);
+      const ans = Math.floor(Rr / k) - Math.floor((L - 1) / k);
+      return numQ({ topic: 'bolunebilme', level: 2, ans, text: `${L} ile ${Rr} arasındaki (ikisi de dahil) sayılardan kaç tanesi ${k} ile tam bölünür?`,
+        distract: [ans + 1, ans - 1, Math.floor((Rr - L) / k), Math.floor(Rr / k)],
+        hint: `1’den ${Rr} sayısına kadar olanları say, 1’den ${L - 1} sayısına kadar olanları çıkar.`,
+        sol: steps([`1–${Rr} arasında: ${Rr} ÷ ${k} ⇒ ${Math.floor(Rr / k)} tane`, `1–${L - 1} arasında: ${L - 1} ÷ ${k} ⇒ ${Math.floor((L - 1) / k)} tane`, `Fark: <b>${ans}</b>`]) });
+    }
+    const [a, b] = pick([[2, 3], [3, 5], [4, 6], [3, 4], [5, 6], [2, 5], [6, 8], [4, 10]]);
+    const N = R(60, 200), L = lcm(a, b);
+    const na = Math.floor(N / a), nb = Math.floor(N / b), nl = Math.floor(N / L), ans = na + nb - nl;
+    return numQ({ topic: 'bolunebilme', level: 3, ans, text: `1 ile ${N} arasındaki (ikisi de dahil) sayılardan kaç tanesi ${a} ile <i>veya</i> ${b} ile tam bölünür?`,
+      distract: [na + nb, na + nb - 2 * nl, ans + 1, N - ans, na * nb > 999 ? ans - 1 : ans + nl + 1],
+      hint: 'İki gruptaki sayıları topla. Ama iki gruba birden giren sayıları iki kez saydın! Onlar EKOK’un katlarıdır.',
+      sol: steps([`${a} ile bölünenler: ${na}`, `${b} ile bölünenler: ${nb}`, `İkisiyle birden (EKOK = ${L}) bölünenler: ${nl}`, `${na} + ${nb} − ${nl} = <b>${ans}</b>`]) });
+  },
+  l => {
+    for (let t = 0; t < 200; t++) {
+      if (l === 1) {
+        const k = pick([3, 9, 4, 6]);
+        const len = R(3, 4), pos = R(1, len - 1);
+        const digs = Array.from({ length: len }, (_, i) => i === 0 ? R(1, 9) : R(0, 9));
+        const vals = []; for (let d = 0; d <= 9; d++) { const x = digs.slice(); x[pos] = d; if (+x.join('') % k === 0) vals.push(d); }
+        if (!vals.length || vals.length > 6) continue;
+        const pat = digs.map((d, i) => i === pos ? 'A' : d).join('');
+        const ans = vals.length;
+        return numQ({ topic: 'bolunebilme', level: 1, ans, text: `${len === 3 ? 'Üç' : 'Dört'} basamaklı <b>${pat}</b> sayısı ${k} ile tam bölünebiliyor. A yerine kaç farklı rakam yazılabilir?`,
+          distract: [ans + 1, ans - 1, ans + 2, 10 - ans, 1],
+          hint: `${k} ile bölünebilme kuralı: ${BOLKURAL[k]}`,
+          sol: steps([BOLKURAL[k], `A yerine 0’dan 9’a kadar denediğimizde uygun olanlar: ${vals.join(', ')}.`, `Cevap: <b>${ans}</b> rakam`]) });
+      }
+      if (l === 2) {
+        const k = pick([3, 9, 6, 4, 12]);
+        const len = 4, pos = R(1, 3);
+        const digs = Array.from({ length: len }, (_, i) => i === 0 ? R(1, 9) : R(0, 9));
+        const vals = []; for (let d = 0; d <= 9; d++) { const x = digs.slice(); x[pos] = d; if (+x.join('') % k === 0) vals.push(d); }
+        if (vals.length < 2) continue;
+        const pat = digs.map((d, i) => i === pos ? 'A' : d).join('');
+        const ans = vals.reduce((s, v) => s + v, 0);
+        return numQ({ topic: 'bolunebilme', level: 2, ans, text: `Dört basamaklı <b>${pat}</b> sayısı ${k} ile tam bölünebiliyor. A yerine yazılabilecek rakamların toplamı kaçtır?`,
+          distract: [ans - vals[0] === ans ? ans + 3 : ans - vals[vals.length - 1], ans + 3, vals.length, ans + 9, ans - 3],
+          hint: `${k} ile bölünebilme kuralı: ${BOLKURAL[k]}`,
+          sol: steps([BOLKURAL[k], `Uygun A değerleri: ${vals.join(', ')}.`, `Toplam: ${vals.join(' + ')} = <b>${ans}</b>`]) });
+      }
+      const k = pick([15, 45, 12, 18, 36, 6]);
+      const p1 = R(1, 2), p2 = 3; // 4 basamaklı: 0.hane sabit
+      const digs = [R(1, 9), R(0, 9), R(0, 9), R(0, 9)];
+      let cnt = 0, ex = [];
+      for (let a = 0; a <= 9; a++) for (let b = 0; b <= 9; b++) { const x = digs.slice(); x[p1] = a; x[p2] = b; const v = +x.join(''); if (v % k === 0) { cnt++; if (ex.length < 6) ex.push(v); } }
+      if (cnt < 1 || cnt > 12) continue;
+      const pat = digs.map((d, i) => i === p1 ? 'A' : i === p2 ? 'B' : d).join('');
+      return numQ({ topic: 'bolunebilme', level: 3, ans: cnt, text: `A ve B birer rakam olmak üzere (aynı da olabilirler), dört basamaklı <b>${pat}</b> sayısı ${k} ile tam bölünebiliyor. Bu şartı sağlayan kaç farklı sayı yazılabilir?`,
+        distract: [cnt + 1, cnt - 1, cnt * 2, cnt + 2, 10],
+        hint: `${BOLKURAL[k]} Önce son rakam (B) için şartı uygula, sonra her B için A’yı bul.`,
+        sol: steps([BOLKURAL[k], `B için son rakam şartını, sonra her B değeri için A’nın alabileceği değerleri buluruz.`, `Uygun sayılar: ${ex.join(', ')}${cnt > ex.length ? ', …' : ''}`, `Toplam <b>${cnt}</b> sayı.`]) });
+    }
+  },
+  l => {
+    const m = R(5, 11), r = R(1, m - 1);
+    if (l === 1) {
+      const k = R(2, 6), ans = (k * r) % m;
+      return numQ({ topic: 'bolunebilme', level: 1, ans, text: `Bir sayı ${m} ile bölündüğünde kalan ${r} oluyor. Bu sayının ${k} katı ${m} ile bölünürse kalan kaç olur?`,
+        distract: [k * r, r, (ans + 1) % m, m - ans, (ans + m - 1) % m, k],
+        hint: `Kalanın ${k} katını al; ${m} veya daha büyükse yeniden ${m} ile böl.`,
+        sol: steps([`Sayının ${k} katının kalanı, kalanın ${k} katının kalanına eşittir.`, `${k} × ${r} = ${k * r}`, `${k * r} ÷ ${m} ⇒ kalan <b>${ans}</b>`]) });
+    }
+    if (l === 2) {
+      const k = R(2, 5), c = R(3, 20), ans = (k * r + c) % m;
+      return numQ({ topic: 'bolunebilme', level: 2, ans, text: `Bir sayı ${m} ile bölündüğünde kalan ${r} oluyor. Bu sayının ${k} katının ${c} fazlası ${m} ile bölünürse kalan kaç olur?`,
+        distract: [(k * r) % m, (r + c) % m, (ans + 1) % m, m - 1 - ans, (ans + 2) % m],
+        hint: 'Sayının kendisi yerine kalanını kullan: kalanın katını al, üstüne ekle, sonra böl.',
+        sol: steps([`Sayı yerine kalanı kullanırız: ${k} × ${r} + ${c} = ${k * r + c}`, `${k * r + c} ÷ ${m} ⇒ kalan <b>${ans}</b>`]) });
+    }
+    const r2 = R(1, m - 1), ans = (r * r2) % m;
+    return numQ({ topic: 'bolunebilme', level: 3, ans, text: `A sayısı ${m} ile bölündüğünde kalan ${r}, B sayısı ${m} ile bölündüğünde kalan ${r2} oluyor. A × B çarpımı ${m} ile bölündüğünde kalan kaç olur?`,
+      distract: [(r + r2) % m, r * r2 >= m ? r * r2 : (ans + 2) % m, (ans + 1) % m, Math.abs(r - r2), m - ans],
+      hint: 'A = (… × ' + m + ') + ' + r + ' şeklinde yaz. Çarpımda ' + m + '’nin katı olan parçalar kalanı etkilemez.',
+      sol: steps([`Çarpımın kalanı, kalanların çarpımının kalanıdır.`, `${r} × ${r2} = ${r * r2}`, `${r * r2} ÷ ${m} ⇒ kalan <b>${ans}</b>`]) });
+  },
+  l => {
+    const a = l === 1 ? R(1, 10) : l === 2 ? R(20, 50) : R(60, 110);
+    const b = a + (l === 1 ? R(15, 25) : l === 2 ? R(20, 35) : R(25, 45));
+    const ps = []; for (let i = a; i <= b; i++) if (isPrime(i)) ps.push(i);
+    const ans = ps.length;
+    return numQ({ topic: 'bolunebilme', level: l, ans, text: `${a} ile ${b} arasında (ikisi de dahil) kaç tane asal sayı vardır?`,
+      distract: [ans + 1, ans - 1, ans + 2, ans - 2],
+      hint: 'Çift sayıları (2 hariç) ve 5 ile bitenleri (5 hariç) hemen ele. Kalanları 3 ve 7 ile bölmeyi dene.',
+      sol: steps([`Asal sayılar: ${ps.join(', ')}`, `Toplam <b>${ans}</b> tane.`]) });
+  },
+  l => {
+    const k = pick([2, 3, 4, 5, 6, 9]);
+    const digits = l === 1 ? 3 : 4;
+    const lo = 10 ** (digits - 1), hi = 10 ** digits - 1;
+    const valid = [], nd = [];
+    if (l < 3) {
+      for (let x = hi; x >= lo && valid.length < 4; x--) if (x % k === 0 && distinct(x)) valid.push(x);
+      for (let x = hi; x >= lo && nd.length < 1; x--) if (x % k === 0 && !distinct(x)) nd.push(x);
+      const ans = valid[0];
+      return numQ({ topic: 'bolunebilme', level: l, ans, text: `Rakamları birbirinden farklı, ${k} ile tam bölünebilen en büyük ${digits === 3 ? 'üç' : 'dört'} basamaklı sayı kaçtır?`,
+        distract: [nd[0], valid[1], valid[2], valid[3]],
+        hint: `En büyük rakamları sola yerleştir: ${digits === 3 ? '98_' : '987_'} gibi başla. Sonra ${k} ile bölünme kuralını uygula.`,
+        sol: steps([BOLKURAL[k], `Büyük rakamları başa koyarak ve rakamları farklı tutarak aşağı doğru deneriz.`, `${nd[0]} tekrarlı rakam içerdiği için olmaz.`, `Şartı sağlayan en büyük sayı: <b>${ans}</b>`]) });
+    }
+    for (let x = lo; x <= hi && valid.length < 4; x++) if (x % k === 0 && distinct(x)) valid.push(x);
+    for (let x = lo; x <= hi && nd.length < 1; x++) if (x % k === 0 && !distinct(x)) nd.push(x);
+    const ans = valid[0];
+    return numQ({ topic: 'bolunebilme', level: 3, ans, text: `Rakamları birbirinden farklı, ${k} ile tam bölünebilen en küçük dört basamaklı sayı kaçtır?`,
+      distract: [nd[0], valid[1], valid[2], valid[3]],
+      hint: 'En küçük rakamları sola yerleştir: 1 0 2 _ gibi başla (başa 0 gelemez!).',
+      sol: steps([BOLKURAL[k], `1023’ten başlayarak rakamları farklı olan sayıları yukarı doğru deneriz.`, `Şartı sağlayan en küçük sayı: <b>${ans}</b>`]) });
+  }
+]);
+
+/* ---------- 3. EBOB – EKOK ---------- */
+T('ebob', 'EBOB ve EKOK', 'EK', {
+  facts: [
+    '<b>EKOK</b> (en küçük ortak kat): Birlikte tekrar etme, “aynı anda”, “ilk kez yeniden buluşma” sorularında kullanılır.',
+    '<b>EBOB</b> (en büyük ortak bölen): “Hiç artmadan en büyük eş parçalara bölme”, “eşit aralıklarla en az ağaç” sorularında kullanılır.',
+    'İki sayı için: <b>EBOB × EKOK = sayıların çarpımı</b>.',
+    '“4, 5 ve 6 ile bölününce hep 1 kalan” veren sayılar: EKOK’un katlarının 1 fazlası.',
+    '“4 ile bölününce 3, 5 ile bölününce 4 kalan” gibi eksikler aynıysa: EKOK’un katlarının 1 eksiği.'
+  ],
+  tactic: 'Soruyu okurken kendine sor: “Parçalar büyüyor mu (EBOB) yoksa zaman/sayı büyüyüp buluşuyor mu (EKOK)?”',
+  example: { q: 'İki zil 12 ve 18 dakikada bir çalıyor. Saat 10:00’da birlikte çaldılar. Tekrar ne zaman birlikte çalarlar?', a: 'EKOK(12, 18) = 36. 10:00 + 36 dakika = <b>10:36</b>.' }
+}, [
+  l => {
+    let xs, L;
+    for (let t = 0; t < 100; t++) {
+      xs = l < 3 ? shuffle([6, 8, 9, 10, 12, 15, 18, 20, 24, 25, 30, 40, 45]).slice(0, 2) : shuffle([4, 6, 8, 9, 10, 12, 15, 18, 20]).slice(0, 3);
+      L = xs.reduce(lcm);
+      if (L <= (l === 1 ? 72 : 240) && L < xs.reduce((a, b) => a * b) && !xs.some(x => x === L)) break;
+    }
+    const st = R(28, 36) * 15; // 07:00 - 09:00
+    const names = ['A', 'B', 'C'];
+    const prod = xs.reduce((a, b) => a * b);
+    return numQ({ topic: 'ebob', level: l, ans: st + L, show: toTime, min: st + 1,
+      text: `Bir duraktan ${xs.map((x, i) => `${names[i]} otobüsü ${x} dakikada bir`).join(', ').replace(/, ([^,]*)$/, ' ve $1')} kalkıyor. Bu otobüsler saat ${toTime(st)} itibarıyla aynı anda kalktıklarına göre, tekrar ilk kez aynı anda saat kaçta kalkarlar?`,
+      distract: [st + prod, st + L + 30, st + L - 15, st + 2 * L, st + xs[0] + xs[1]].filter(v => v > st && v < st + 1000),
+      hint: 'Otobüslerin hepsinin kalkış aralıklarının katı olan en küçük süreyi bul: EKOK.',
+      sol: steps([`EKOK(${xs.join(', ')}) = ${L} dakika`, `${toTime(st)} + ${L} dakika = <b>${toTime(st + L)}</b>`]) });
+  },
+  l => {
+    const set = pick([[2, 3, 4], [3, 4, 6], [4, 5, 6], [2, 5, 6], [3, 5, 6], [4, 6, 9], [6, 8, 12], [3, 4, 5]]);
+    const L = set.reduce(lcm);
+    if (l === 1) {
+      const ans = L + 1;
+      return numQ({ topic: 'ebob', level: 1, ans, text: `${set.join(', ').replace(/, (\d+)$/, ' ve $1')} ile bölündüğünde her seferinde 1 kalanını veren, 1’den büyük en küçük doğal sayı kaçtır?`,
+        distract: [L, set.reduce((a, b) => a * b) + 1, L - 1, L + 2, 2 * L + 1],
+        hint: 'Sayıdan 1 çıkarırsan, sonuç bu sayıların hepsine tam bölünür.',
+        sol: steps([`Aranan sayının 1 eksiği ${set.join(', ')} sayılarının ortak katıdır.`, `EKOK(${set.join(', ')}) = ${L}`, `En küçük sayı: ${L} + 1 = <b>${ans}</b>`]) });
+    }
+    if (l === 2) {
+      const r = R(1, Math.min(...set) - 1);
+      let k = Math.ceil((100 - r) / L); const ans = k * L + r;
+      return numQ({ topic: 'ebob', level: 2, ans, text: `${set.join(', ').replace(/, (\d+)$/, ' ve $1')} ile bölündüğünde her seferinde ${r} kalanını veren en küçük üç basamaklı doğal sayı kaçtır?`,
+        distract: [(k - 1) * L + r >= 10 ? (k - 1) * L + r : ans + L, ans + L, k * L, ans - 1, 100 + r],
+        hint: `Sayının ${r} eksiği EKOK’un bir katıdır. 100’den büyük ilk uygun katı bul.`,
+        sol: steps([`EKOK(${set.join(', ')}) = ${L}`, `Sayılar: ${L}·k + ${r} biçimindedir.`, `100’den büyük ilk değer: ${L} × ${k} + ${r} = <b>${ans}</b>`]) });
+    }
+    const ans = L - 1;
+    const ifade = set.map(x => `${x} ile bölündüğünde ${x - 1}`).join(', ').replace(/, ([^,]*)$/, ' ve $1');
+    return numQ({ topic: 'ebob', level: 3, ans, text: `${ifade} kalanını veren en küçük doğal sayı kaçtır?`,
+      distract: [L + 1, L, 2 * L - 1, set.reduce((a, b) => a * b) - 1, ans - 2],
+      hint: 'Her durumda kalan, bölenden 1 eksik. Sayıya 1 eklersen ne olur?',
+      sol: steps(['Her bölmede kalan, bölenden 1 eksik. Yani sayıya 1 eklersek hepsine tam bölünür.', `Sayı + 1 = EKOK(${set.join(', ')}) = ${L}`, `Sayı = ${L} − 1 = <b>${ans}</b>`]) });
+  },
+  l => {
+    const g = l === 1 ? pick([2, 3, 4, 5]) : l === 2 ? pick([4, 5, 6, 8, 10]) : pick([6, 7, 8, 9, 12, 15]);
+    let p, q; do { p = R(2, l === 1 ? 5 : 8); q = R(p + 1, l === 1 ? 7 : 11); } while (gcd(p, q) !== 1);
+    const a = g * p, b = g * q, ans = p * q;
+    return numQ({ topic: 'ebob', level: l, ans, text: `Kenar uzunlukları ${a} cm ve ${b} cm olan dikdörtgen biçimindeki bir karton, hiç artmayacak şekilde birbirine eş ve olabildiğince büyük karelere kesiliyor. Kaç kare elde edilir?`,
+      distract: [p + q, 2 * (p + q), g, a * b / 4 % 1 === 0 && a * b / 4 !== ans ? a * b / 4 : ans + p, ans * 4],
+      hint: 'Karenin kenarı hem ' + a + '’i hem ' + b + '’yi tam bölmeli ve en büyük olmalı: EBOB.',
+      sol: steps([`Karenin kenarı = EBOB(${a}, ${b}) = ${g} cm`, `Bir kenar boyunca ${a} ÷ ${g} = ${p}, diğer kenar boyunca ${b} ÷ ${g} = ${q} kare`, `Toplam: ${p} × ${q} = <b>${ans}</b> kare`]) });
+  },
+  l => {
+    const g = R(2, l === 3 ? 12 : 6); let p, q; do { p = R(1, 6); q = R(p + 1, 9); } while (gcd(p, q) !== 1);
+    const x = g * p, y = g * q, L = g * p * q;
+    if (l === 1) {
+      return numQ({ topic: 'ebob', level: 1, ans: g * L, text: `İki sayının EBOB’u ${g}, EKOK’u ${L} ise bu iki sayının çarpımı kaçtır?`,
+        distract: [g + L, L, L - g, 2 * L, g * L + g],
+        hint: 'İki sayı için önemli bir eşitlik var: EBOB × EKOK = ?',
+        sol: steps([`EBOB × EKOK = iki sayının çarpımı`, `${g} × ${L} = <b>${fmt(g * L)}</b>`]) });
+    }
+    return numQ({ topic: 'ebob', level: l, ans: y, text: `İki doğal sayının EBOB’u ${g}, EKOK’u ${L} olarak veriliyor. Sayılardan biri ${x} ise diğeri kaçtır?`,
+      distract: [L / x * g === y ? L - x : L / x * g, g * L / x + g, L - x, x + g, L / g],
+      hint: 'EBOB × EKOK = birinci sayı × ikinci sayı',
+      sol: steps([`${x} × ? = ${g} × ${L} = ${g * L}`, `? = ${g * L} ÷ ${x} = <b>${y}</b>`]) });
+  },
+  l => {
+    const g = l === 1 ? pick([2, 3, 5]) : l === 2 ? pick([4, 5, 6, 8]) : pick([6, 7, 9, 12, 15]);
+    let p, q; do { p = R(2, 6); q = R(p + 1, 9); } while (gcd(p, q) !== 1);
+    const a = g * p, b = g * q, ans = 2 * (p + q);
+    return numQ({ topic: 'ebob', level: l, ans, text: `Kenar uzunlukları ${a} m ve ${b} m olan dikdörtgen biçimindeki bir bahçenin çevresine, her köşeye birer fidan gelecek şekilde ve eşit aralıklarla fidan dikilecektir. En az kaç fidan gerekir?`,
+      distract: [ans + 4, ans + 2, ans - 2, (p + 1) * (q + 1), p * q],
+      hint: 'Aralık hem ' + a + '’i hem ' + b + '’yi bölmeli; en az fidan için aralık en büyük olmalı. Kapalı bir çevrede fidan sayısı = aralık sayısı.',
+      sol: steps([`Aralık = EBOB(${a}, ${b}) = ${g} m`, `Çevre = 2 × (${a} + ${b}) = ${2 * (a + b)} m`, `Kapalı çevrede fidan sayısı = aralık sayısı = ${2 * (a + b)} ÷ ${g} = <b>${ans}</b>`]) });
+  }
+]);
+
+/* ---------- 4. Örüntüler ve Diziler ---------- */
+T('oruntu', 'Örüntüler ve Diziler', '1·3·5', {
+  facts: [
+    'Ardışık terimler arasında hep aynı fark (d) varsa: <b>n. terim = ilk terim + (n − 1) × d</b>.',
+    '<b>Terim sayısı</b> = (son terim − ilk terim) ÷ fark + 1. Bu “+1”i unutmak en sık yapılan hatadır!',
+    '<b>Gauss toplamı</b>: 1 + 2 + … + n = n × (n + 1) ÷ 2. Genel olarak: (ilk + son) × terim sayısı ÷ 2.',
+    'Tekrar eden örüntülerde (ABCABC…) konum, tekrar uzunluğuna bölünür; <b>kalan</b> cevabı verir.',
+    'Birler basamağı döngüsü: 2’nin kuvvetleri 2, 4, 8, 6 diye; 3’ünkiler 3, 9, 7, 1 diye tekrar eder.'
+  ],
+  tactic: 'İlk birkaç terimi yaz, <b>farklarına</b> bak. Şekil örüntülerinde her adımda kaç parça eklendiğini bul.',
+  example: { q: '5, 9, 13, …, 81 dizisinde kaç terim vardır?', a: 'Fark 4. (81 − 5) ÷ 4 = 19 adım. Terim sayısı = 19 + 1 = <b>20</b>.' }
+}, [
+  l => {
+    if (l < 3) {
+      const a = R(1, 20), d = R(2, 9), n = l === 1 ? R(10, 20) : R(30, 100), ans = a + (n - 1) * d;
+      return numQ({ topic: 'oruntu', level: l, ans, text: `<b>${a}, ${a + d}, ${a + 2 * d}, ${a + 3 * d}, …</b> şeklinde devam eden dizinin ${n}. terimi kaçtır?`,
+        distract: [a + n * d, n * d, a + (n - 2) * d, (n - 1) * d],
+        hint: 'İlk terimden sonra kaç kez fark eklersin? 2. terim için 1 kez, 3. terim için 2 kez…',
+        sol: steps([`Fark d = ${d}`, `${n}. terim = ${a} + (${n} − 1) × ${d} = ${a} + ${(n - 1) * d} = <b>${ans}</b>`]) });
+    }
+    const d = R(3, 9), a = R(2, 30), t3 = a + 2 * d, t7 = a + 6 * d, n = R(15, 30), ans = a + (n - 1) * d;
+    return numQ({ topic: 'oruntu', level: 3, ans, text: `Ardışık terimleri arasındaki fark hep aynı olan bir sayı dizisinin 3. terimi ${t3}, 7. terimi ${t7} olarak veriliyor. Bu dizinin ${n}. terimi kaçtır?`,
+      distract: [a + n * d, t7 + (n - 7) * d + d, ans - d, t3 * Math.round(n / 3)],
+      hint: '3. terimden 7. terime giderken kaç kez fark eklenir?',
+      sol: steps([`3. terimden 7. terime 4 adım: 4d = ${t7} − ${t3} = ${4 * d} ⇒ d = ${d}`, `İlk terim = ${t3} − 2 × ${d} = ${a}`, `${n}. terim = ${a} + ${n - 1} × ${d} = <b>${ans}</b>`]) });
+  },
+  l => {
+    const a = R(1, 15), d = R(2, l === 1 ? 5 : 9), n = l === 1 ? R(8, 20) : R(20, 80), L = a + (n - 1) * d;
+    if (l < 3) return numQ({ topic: 'oruntu', level: l, ans: n, text: `<b>${a}, ${a + d}, ${a + 2 * d}, …, ${L}</b> dizisinde kaç terim vardır?`,
+      distract: [n - 1, n + 1, Math.floor(L / d), n + 2],
+      hint: 'Terim sayısı = (son − ilk) ÷ fark + 1',
+      sol: steps([`(${L} − ${a}) ÷ ${d} = ${n - 1} adım`, `Terim sayısı = ${n - 1} + 1 = <b>${n}</b>`, 'Çitler ve direkler gibi düşün: 3 aralık varsa 4 direk vardır.']) });
+    // l3: iki basamaklı sayılardan k ile bölününce r kalanı verenler
+    const k = R(3, 9), r = R(1, k - 1);
+    let first = 10; while (first % k !== r) first++;
+    let last = 99; while (last % k !== r) last--;
+    const ans = (last - first) / k + 1;
+    return numQ({ topic: 'oruntu', level: 3, ans, text: `İki basamaklı doğal sayılardan kaç tanesi ${k} ile bölündüğünde ${r} kalanını verir?`,
+      distract: [ans - 1, ans + 1, Math.floor(90 / k), ans + 2],
+      hint: 'Uygun sayılar bir dizi oluşturur: ilkini ve sonuncusunu bul, fark ' + k + '.',
+      sol: steps([`Uygun ilk sayı ${first}, son sayı ${last}, fark ${k}`, `(${last} − ${first}) ÷ ${k} + 1 = <b>${ans}</b>`]) });
+  },
+  l => {
+    if (l === 1) {
+      const n = pick([10, 12, 15, 20, 25, 30, 40, 50]), ans = n * (n + 1) / 2;
+      return numQ({ topic: 'oruntu', level: 1, ans, text: `1 + 2 + 3 + … + ${n} toplamı kaçtır?`,
+        distract: [n * n, n * (n - 1) / 2, ans + n, n * (n + 1)],
+        hint: 'Baştan ve sondan eşleştir: 1 + ' + n + ', 2 + ' + (n - 1) + ', … Her çift aynı toplamı verir.',
+        sol: steps([`Terimleri eşleştir: (1 + ${n}), (2 + ${n - 1}), … her çiftin toplamı ${n + 1}`, `${n} × ${n + 1} ÷ 2 = <b>${fmt(ans)}</b>`]) });
+    }
+    const a = l === 2 ? pick([1, 2, 3, 5]) : R(4, 20), d = l === 2 ? 2 : R(3, 7), n = l === 2 ? R(10, 25) : R(10, 20), L = a + (n - 1) * d, ans = (a + L) * n / 2;
+    return numQ({ topic: 'oruntu', level: l, ans, text: `${a} + ${a + d} + ${a + 2 * d} + … + ${L} toplamı kaçtır?`,
+      distract: [(a + L) * (n - 1) / 2 % 1 === 0 ? (a + L) * (n - 1) / 2 : ans - L, (a + L) * (n + 1) / 2 % 1 === 0 ? (a + L) * (n + 1) / 2 : ans + L, ans + d, n * L],
+      hint: 'Önce terim sayısını bul. Sonra (ilk + son) × terim sayısı ÷ 2.',
+      sol: steps([`Terim sayısı: (${L} − ${a}) ÷ ${d} + 1 = ${n}`, `Toplam: (${a} + ${L}) × ${n} ÷ 2 = <b>${fmt(ans)}</b>`]) });
+  },
+  l => {
+    const kind = pick(['kare', 'ucgen', 'altigen']);
+    const per = kind === 'kare' ? 3 : kind === 'ucgen' ? 2 : 5, first = per + 1;
+    const f = n => per * n + 1;
+    const desc = kind === 'kare' ? 'yan yana kareler' : kind === 'ucgen' ? 'yan yana (biri düz, biri ters) üçgenler' : 'yan yana bitişik altıgenler';
+    const fig = kind === 'altigen' ? '' : svgSticks(kind, 3);
+    const seq = `1. şekilde ${f(1)}, 2. şekilde ${f(2)}, 3. şekilde ${f(3)} kibrit çöpü kullanılmıştır.`;
+    if (l < 3) {
+      const n = l === 1 ? R(5, 12) : R(20, 60), ans = f(n);
+      return numQ({ topic: 'oruntu', level: l, ans, fig, text: `Kibrit çöpleriyle ${desc} yapılıyor. ${seq} Bu şekilde devam edilirse ${n}. şekilde kaç kibrit çöpü kullanılır?`,
+        distract: [first * n, per * n, ans + per, ans - 1],
+        hint: `İlk şekil ${first} çöp. Sonraki her şekil ${per} çöp ekliyor.`,
+        sol: steps([`Her adımda ${per} çöp eklenir. İlk şekilden önce 1 çöp olduğunu düşün: çöp sayısı = ${per} × n + 1`, `${per} × ${n} + 1 = <b>${ans}</b>`, `${first} × ${n} yanlış olur, çünkü bitişik şekiller ortak kenarları paylaşır.`]) });
+    }
+    const S = R(60, 200), ans = Math.floor((S - 1) / per);
+    return numQ({ topic: 'oruntu', level: 3, ans, fig, text: `Kibrit çöpleriyle ${desc} yapılıyor. ${seq} Elimizde ${S} kibrit çöpü varsa bu şekilde en fazla kaç ${kind === 'kare' ? 'kare' : kind === 'ucgen' ? 'üçgen' : 'altıgen'} yapılabilir?`,
+      distract: [Math.floor(S / first), Math.floor(S / per), ans + 1, ans - 1],
+      hint: `n şekil için ${per} × n + 1 çöp gerekir. Bu sayı ${S} değerini geçmemeli.`,
+      sol: steps([`${per} × n + 1 ≤ ${S} ⇒ ${per} × n ≤ ${S - 1}`, `n ≤ ${S - 1} ÷ ${per} ⇒ en fazla <b>${ans}</b>`]) });
+  },
+  l => {
+    if (l < 3) {
+      const word = pick(['MATEMATİK', 'OLİMPİYAT', 'SAYILAR', 'PERGEL', 'GEOMETRİ']);
+      const letters = [...word];
+      const N = l === 1 ? R(30, 120) : R(500, 2026), idx = (N - 1) % letters.length, ans = letters[idx];
+      const uniq = [...new Set(letters)];
+      const near = [letters[idx % letters.length === 0 ? letters.length - 1 : idx - 1], letters[(idx + 1) % letters.length], letters[N % letters.length]];
+      const wrongs = shuffle([...new Set(near.concat(shuffle(uniq)))].filter(x => x !== ans));
+      return txtQ({ topic: 'oruntu', level: l, text: `<b>${word}${word}${word}…</b> şeklinde “${word}” kelimesi aralıksız tekrar tekrar yazılıyor. Baştan ${N}. harf hangisidir?`,
+        hint: `Kelime ${letters.length} harfli. ${N} sayısını ${letters.length} ile böl, kalana bak.`,
+        sol: steps([`Kelime ${letters.length} harf. ${N} ÷ ${letters.length} = ${Math.floor(N / letters.length)}, kalan ${N % letters.length}`, N % letters.length === 0 ? `Kalan 0 ise son harf: <b>${ans}</b>` : `Kalan ${N % letters.length} ⇒ kelimenin ${N % letters.length}. harfi: <b>${ans}</b>`]) }, ans, wrongs);
+    }
+    const b = pick([2, 3, 7, 8]), N = R(20, 2026);
+    const cyc = { 2: [2, 4, 8, 6], 3: [3, 9, 7, 1], 7: [7, 9, 3, 1], 8: [8, 4, 2, 6] }[b];
+    const ans = cyc[(N - 1) % 4];
+    const wrongs = cyc.filter(x => x !== ans).map(String).concat(['5', '0']);
+    return txtQ({ topic: 'oruntu', level: 3, text: `${b}<sup>${N}</sup> sayısının birler basamağındaki rakam kaçtır?`,
+      hint: `${b}¹, ${b}², ${b}³, ${b}⁴, ${b}⁵ sayılarının birler basamağını yaz. Bir döngü göreceksin.`,
+      sol: steps([`Birler basamakları sırayla: ${cyc.join(', ')}, ${cyc.join(', ')}, … (4’lü döngü)`, `${N} ÷ 4 ⇒ kalan ${N % 4}${N % 4 === 0 ? ' (döngünün 4. elemanı)' : ''}`, `Cevap: <b>${ans}</b>`]) }, String(ans), wrongs);
+  }
+]);
+
+/* ---------- 5. Sayma ---------- */
+const C = (n, k) => { let r = 1; for (let i = 1; i <= k; i++) r = r * (n - k + i) / i; return Math.round(r); };
+T('sayma', 'Sayma ve Olasılık Düşüncesi', '#', {
+  facts: [
+    '<b>Çarpma kuralı</b>: Bir seçim a yoldan, ondan bağımsız ikinci seçim b yoldan yapılabiliyorsa, ikisi birlikte a × b yoldan yapılır.',
+    '<b>Toplama kuralı</b>: Ya bu ya o (ikisi birden değil) durumlarında sayılar toplanır.',
+    'n kişi herkesle birer kez tokalaşırsa: <b>n × (n − 1) ÷ 2</b> tokalaşma olur.',
+    'Rakamları farklı sayı yazarken <b>önce kısıtlı basamağı</b> (başa 0 gelemez, son rakam çift olmalı…) doldur.',
+    'Kareli yol sorularında her köşeye, oraya kaç yoldan gelindiğini yaz: sol ve alt komşuların toplamı.'
+  ],
+  tactic: 'Düzenli bir <b>liste veya ağaç</b> kur. “Hepsini say” yerine “her adımda kaç seçeneğim var?” diye sor.',
+  example: { q: '0, 1, 2, 3 rakamlarıyla rakamları farklı kaç tane üç basamaklı sayı yazılır?', a: 'Yüzler: 0 olamaz ⇒ 3 seçenek. Onlar: kalan 3 rakam. Birler: kalan 2 rakam. 3 × 3 × 2 = <b>18</b>.' }
+}, [
+  l => {
+    const a = R(2, 5), b = R(2, 5), c = R(2, 4);
+    if (l === 1) return numQ({ topic: 'sayma', level: 1, ans: a * b, text: `Zeynep’in ${a} farklı tişörtü ve ${b} farklı eteği var. Bir tişört ve bir etek seçerek kaç farklı şekilde giyinebilir?`,
+      distract: [a + b, a * b + 1, a * b - 1, 2 * (a + b)],
+      hint: 'Her tişört, her etekle eşleşebilir.',
+      sol: steps([`Her tişört için ${b} etek seçeneği var.`, `${a} × ${b} = <b>${a * b}</b>`]) });
+    if (l === 2) return numQ({ topic: 'sayma', level: 2, ans: a * b * c, text: `Zeynep’in ${a} farklı tişörtü, ${b} farklı pantolonu ve ${c} farklı ayakkabısı var. Birer tane seçerek kaç farklı şekilde giyinebilir?`,
+      distract: [a + b + c, a * b + c, a * b * c - c, a * b * c + a],
+      hint: 'Çarpma kuralını üç seçim için uygula.',
+      sol: steps([`${a} × ${b} × ${c} = <b>${a * b * c}</b>`]) });
+    const ans = a * b * c - c;
+    return numQ({ topic: 'sayma', level: 3, ans, text: `Zeynep’in ${a} farklı tişörtü (biri kırmızı), ${b} farklı pantolonu (biri yeşil) ve ${c} farklı ayakkabısı var. Kırmızı tişörtü yeşil pantolonla birlikte giymiyor. Birer tane seçerek kaç farklı şekilde giyinebilir?`,
+      distract: [a * b * c, a * b * c - 1, (a - 1) * (b - 1) * c, a * b * c - a - b],
+      hint: 'Önce hiç kural yokmuş gibi say, sonra yasak olan kombinleri çıkar.',
+      sol: steps([`Kuralsız: ${a} × ${b} × ${c} = ${a * b * c}`, `Yasak: kırmızı tişört + yeşil pantolon + herhangi bir ayakkabı = 1 × 1 × ${c} = ${c}`, `${a * b * c} − ${c} = <b>${ans}</b>`]) });
+  },
+  l => {
+    const n = l === 1 ? R(4, 9) : R(6, 14);
+    if (l === 1) { const ans = n * (n - 1) / 2; return numQ({ topic: 'sayma', level: 1, ans, text: `Bir toplantıdaki ${n} kişinin her biri diğer herkesle birer kez tokalaşıyor. Toplam kaç tokalaşma olur?`,
+      distract: [n * (n - 1), n * n, n * (n + 1) / 2, ans - 1], hint: 'Her kişi kaç kişiyle tokalaşır? Her tokalaşmayı iki kez saymamaya dikkat et.',
+      sol: steps([`Her kişi ${n - 1} kişiyle tokalaşır: ${n} × ${n - 1} = ${n * (n - 1)}`, `Ama her tokalaşma iki kişiye ait, iki kez sayıldı: ${n * (n - 1)} ÷ 2 = <b>${ans}</b>`]) }); }
+    if (l === 2) { const ans = n * (n - 1); return numQ({ topic: 'sayma', level: 2, ans, text: `${n} takımın katıldığı bir ligde her takım diğer her takımla biri kendi sahasında, biri rakip sahada olmak üzere ikişer maç yapıyor. Ligde toplam kaç maç oynanır?`,
+      distract: [ans / 2, n * n, ans + n, 2 * n], hint: 'Önce her takım çifti arasında tek maç olsaydı kaç maç olurdu, onu bul.',
+      sol: steps([`Tek maç olsaydı: ${n} × ${n - 1} ÷ 2 = ${ans / 2}`, `Her çift iki maç yapıyor: ${ans / 2} × 2 = <b>${ans}</b>`]) }); }
+    const T2 = n * (n - 1) / 2;
+    return numQ({ topic: 'sayma', level: 3, ans: n, text: `Bir sınıftaki öğrencilerin her biri diğer her öğrenciyle birer kez tokalaşıyor ve toplam ${T2} tokalaşma oluyor. Sınıfta kaç öğrenci vardır?`,
+      distract: [n + 1, n - 1, Math.round(Math.sqrt(T2)), n + 2], hint: 'n × (n − 1) ÷ 2 = ' + T2 + ' ⇒ n × (n − 1) = ' + 2 * T2 + '. Ardışık iki sayının çarpımı…',
+      sol: steps([`n × (n − 1) = ${2 * T2}`, `Ardışık iki sayı: ${n} × ${n - 1} = ${2 * T2} ⇒ n = <b>${n}</b>`]) });
+  },
+  l => {
+    let digs;
+    if (l === 1) digs = shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, R(3, 5)).sort();
+    else digs = [0].concat(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]).slice(0, R(3, 4))).sort();
+    const rep = l === 1 && Math.random() < .4;
+    const even = l === 3;
+    let cnt = 0;
+    for (let x = 100; x <= 999; x++) { const s = String(x).split('').map(Number); if (!s.every(d => digs.includes(d))) continue; if (!rep && !distinct(x)) continue; if (even && x % 2) continue; cnt++; }
+    const k = digs.length;
+        const sol = rep ? [`Her basamağa ${k} rakamdan biri gelebilir: ${k} × ${k} × ${k} = <b>${cnt}</b>`]
+      : !digs.includes(0) ? [`Yüzler: ${k}, onlar: ${k - 1}, birler: ${k - 2} seçenek`, `${k} × ${k - 1} × ${k - 2} = <b>${cnt}</b>`]
+        : even ? ['Birler basamağı çift olmalı. Birler basamağının 0 olup olmamasına göre iki duruma ayır.', 'Birler 0 ise: yüzler ve onlar kalan rakamlardan seçilir.', 'Birler 0 dışı bir çift rakam ise: yüzler basamağına 0 gelemez.', `İki durumun toplamı: <b>${cnt}</b>`]
+          : [`Yüzler basamağına 0 gelemez: ${k - 1} seçenek`, `Onlar: kalan ${k - 1} rakam (0 artık kullanılabilir)`, `Birler: kalan ${k - 2} rakam`, `${k - 1} × ${k - 1} × ${k - 2} = <b>${cnt}</b>`];
+    return numQ({ topic: 'sayma', level: l, ans: cnt, text: `${digs.join(', ')} rakamları kullanılarak ${rep ? '' : 'rakamları birbirinden farklı '}kaç tane üç basamaklı ${even ? 'çift ' : ''}sayı yazılabilir?${rep ? ' (Bir rakam birden fazla kez kullanılabilir.)' : ''}`,
+      distract: [k * (k - 1) * (k - 2), k * k * k, (k - 1) * (k - 1) * (k - 2), cnt + k, Math.round(cnt / 2)],
+      hint: digs.includes(0) ? 'Dikkat: sayının başına 0 gelemez! Önce yüzler basamağını doldur.' : 'Her basamak için kaç seçenek kaldığını yaz ve çarp.',
+      sol: steps(sol) });
+  },
+  l => {
+    const [a, b] = l === 1 ? pick([[2, 2], [1, 3], [2, 3], [1, 4]]) : l === 2 ? pick([[3, 3], [2, 4], [3, 4], [2, 5]]) : pick([[4, 4], [3, 5], [4, 5], [3, 6]]);
+    const ans = C(a + b, a);
+    return numQ({ topic: 'sayma', level: l, ans, fig: svgGrid(b, a, { ab: true }),
+      text: `Şekildeki ${b} × ${a} kareli ağda A noktasından B noktasına, çizgiler üzerinde yalnızca <b>sağa</b> ve <b>yukarı</b> giderek kaç farklı yoldan gidilebilir?`,
+      distract: [a * b, a + b, (a + 1) * (b + 1), ans + 1, ans - 2, 2 * (a + b)],
+      hint: 'A noktasına 1 yaz. Her köşeye, soldaki ve alttaki köşelerin sayılarının toplamını yaz. Kenardaki köşeler hep 1’dir.',
+      sol: steps(['Her köşeye oraya kaç yoldan varılabildiğini yazarız: bir köşenin değeri = sol komşu + alt komşu.', `Toplam ${a + b} adımın ${a} tanesi yukarı, ${b} tanesi sağa.`, `B noktasına gelen sayı: <b>${ans}</b>`]) });
+  },
+  l => {
+    const N = l === 1 ? R(40, 99) : l === 2 ? R(100, 300) : R(300, 999), d = R(1, 9);
+    let cnt = 0; for (let i = 1; i <= N; i++) cnt += String(i).split('').filter(c => +c === d).length;
+    let cntNum = 0; for (let i = 1; i <= N; i++) if (String(i).includes(String(d))) cntNum++;
+    return numQ({ topic: 'sayma', level: l, ans: cnt, text: `1 ile ${N} arasındaki (ikisi de dahil) tüm doğal sayılar tahtaya yazılıyor. Tahtaya toplam kaç tane <b>${d}</b> rakamı yazılır?`,
+      distract: [cntNum, cnt + 1, cnt - 1, cnt + 10, cnt - 10],
+      hint: 'Birler basamağındaki ' + d + '’leri ve onlar basamağındaki ' + d + '’leri ayrı ayrı say.' + (N >= 100 ? ' Yüzler basamağını da unutma.' : ''),
+      sol: steps([
+        `Birler basamağında ${d}: ${(() => { let c = 0; for (let i = 1; i <= N; i++) if (i % 10 === d) c++; return c; })()} tane`,
+        `Onlar basamağında ${d}: ${(() => { let c = 0; for (let i = 1; i <= N; i++) if (Math.floor(i / 10) % 10 === d) c++; return c; })()} tane`,
+        ...(N >= 100 ? [`Yüzler basamağında ${d}: ${(() => { let c = 0; for (let i = 1; i <= N; i++) if (Math.floor(i / 100) % 10 === d) c++; return c; })()} tane`] : []),
+        `Toplam: <b>${cnt}</b> (${d}${d} gibi sayılarda rakam iki kez sayılır; “kaç sayıda geçer” sorusunun cevabı ${cntNum} olurdu.)`]) });
+  }
+]);
+
+/* ---------- 6. Problemler ---------- */
+T('problem', 'Problemler', 'x?', {
+  facts: [
+    '<b>Tavuk–tavşan yöntemi</b>: “Hepsi tavuk olsaydı” diye düşün. Eksik kalan ayaklar, tavşanların fazladan ayaklarıdır.',
+    '<b>Yaş farkı</b> hiç değişmez. Her yıl herkes 1 yaş büyür.',
+    '<b>Toplam–fark</b>: Büyük = (toplam + fark) ÷ 2, küçük = (toplam − fark) ÷ 2.',
+    '<b>Sondan başa çözme</b>: İşlemleri tersten yap. Çarpmanın tersi bölme, eklemenin tersi çıkarma.',
+    'Uzun problemlerde bilinmeyene bir <b>kutu</b> ya da harf ver ve cümleleri tek tek matematiğe çevir.'
+  ],
+  tactic: 'Problemi bir <b>tablo veya şerit (bant) modeli</b> ile çiz. 5. sınıf olimpiyat sorularının çoğu şekille kolayca çözülür.',
+  example: { q: 'Tavuk ve tavşanların toplam 10 başı, 28 ayağı var. Kaç tavşan var?', a: 'Hepsi tavuk olsa 20 ayak olurdu. 8 ayak eksik. Her tavşan 2 fazla ayak getirir ⇒ 8 ÷ 2 = <b>4</b> tavşan.' }
+}, [
+  l => {
+    const [bigN, smallN, bl, sl] = l === 3 ? ['dört ayaklı masa', 'üç ayaklı tabure', 4, 3] : ['tavşan', 'tavuk', 4, 2];
+    const r = R(2, l === 1 ? 10 : 25), c = R(3, l === 1 ? 12 : 30), H = r + c, L = bl * r + sl * c;
+    const txt = l === 3 ? `Bir atölyede dört ayaklı masalar ve üç ayaklı taburelerden oluşan toplam ${H} eşya vardır. Bu eşyaların toplam ${L} ayağı olduğuna göre kaç masa vardır?`
+      : `Bir çiftlikteki tavuk ve tavşanların toplam ${H} başı ve ${L} ayağı vardır. Çiftlikte kaç tavşan vardır?`;
+    return numQ({ topic: 'problem', level: l, ans: r, text: txt,
+      distract: [c, Math.floor(L / bl), Math.floor(H / 2), r + 1, r - 1],
+      hint: `Hepsi ${smallN} olsaydı kaç ayak olurdu?`,
+      sol: steps([`Hepsi ${smallN} olsaydı: ${H} × ${sl} = ${H * sl} ayak`, `Eksik ayak: ${L} − ${H * sl} = ${L - H * sl}`, `Her ${bigN} ${bl - sl} fazla ayak getirir: ${L - H * sl} ÷ ${bl - sl} = <b>${r}</b>`]) });
+  },
+  l => {
+    if (l === 1) {
+      const c = R(5, 12), m = c + R(22, 35), x = R(3, 10), ans = m + c + 2 * x;
+      return numQ({ topic: 'problem', level: 1, ans, text: `Elif ${c} yaşında, annesi ${m} yaşındadır. ${x} yıl sonra ikisinin yaşları toplamı kaç olur?`,
+        distract: [m + c + x, m + c, ans + 2, ans - 2], hint: 'İki kişinin de yaşı artar!',
+        sol: steps([`Şimdiki toplam: ${m + c}`, `${x} yılda ikisi de ${x} yaş büyür: toplam ${2 * x} artar`, `${m + c} + ${2 * x} = <b>${ans}</b>`]) });
+    }
+    if (l === 2) {
+      for (let t = 0; t < 200; t++) {
+        const c = R(4, 12), k = R(2, 4), tt = R(1, 15), m = k * (c + tt) - tt;
+        if (m - c < 20 || m - c > 40) continue;
+        return numQ({ topic: 'problem', level: 2, ans: tt, text: `Elif ${c} yaşında, annesi ${m} yaşındadır. Kaç yıl sonra annesinin yaşı Elif’in yaşının ${k} katı olur?`,
+          distract: [tt + 1, tt - 1, tt + 2, m - k * c > 0 ? m - k * c : tt + 3, Math.round((m - c) / k)],
+          hint: `Yaş farkı hiç değişmez: ${m - c}. O zaman annenin yaşı Elif’in ${k} katıysa, fark Elif’in ${k - 1} katıdır.`,
+          sol: steps([`Yaş farkı sabit: ${m} − ${c} = ${m - c}`, `Anne = ${k} × Elif ise fark = ${k - 1} × Elif ⇒ Elif o zaman ${(m - c) / (k - 1)} yaşında`, `${(m - c) / (k - 1)} − ${c} = <b>${tt}</b> yıl sonra`]) });
+      }
+    }
+    const kid = R(6, 14), F = R(24, 36), mom = kid + F, S = kid + mom, t = R(3, 12), ans = kid + t;
+    return numQ({ topic: 'problem', level: 3, ans, text: `Bir anne ile kızının bugünkü yaşları toplamı ${S}, yaşları farkı ${F} olarak veriliyor. ${t} yıl sonra kızı kaç yaşında olur?`,
+      distract: [kid, (S + F) / 2 + t, ans + t, ans - 1, S / 2],
+      hint: 'Küçük = (toplam − fark) ÷ 2',
+      sol: steps([`Kızın bugünkü yaşı: (${S} − ${F}) ÷ 2 = ${kid}`, `${t} yıl sonra: ${kid} + ${t} = <b>${ans}</b>`]) });
+  },
+  l => {
+    if (l === 1) {
+      const small = R(10, 40), F = R(4, 20), big = small + F, S = big + small;
+      return numQ({ topic: 'problem', level: 1, ans: big, text: `Elif ile kardeşinin toplam ${S} bilyesi var. Elif’in bilyeleri kardeşininkinden ${F} fazladır. Elif’in kaç bilyesi vardır?`,
+        distract: [small, S / 2 % 1 === 0 ? S / 2 : big + 1, big + F, S - F],
+        hint: 'Fazlalığı çıkarırsan iki eşit pay kalır.',
+        sol: steps([`${S} − ${F} = ${S - F}, bu iki eşit paya ayrılır: ${small}`, `Elif: ${small} + ${F} = <b>${big}</b>`]) });
+    }
+    if (l === 2) {
+      const d = R(5, 20), a = R(2, 8), b = R(2, 8), can = d + a, ali = can + b, S = d + can + ali;
+      return numQ({ topic: 'problem', level: 2, ans: ali, text: `Ali’nin kalemleri Can’ınkinden ${b} fazla, Can’ın kalemleri de Deniz’inkinden ${a} fazladır. Üçünün toplam ${S} kalemi olduğuna göre Ali’nin kaç kalemi vardır?`,
+        distract: [can, d, Math.round(S / 3), ali + a],
+        hint: 'Deniz’in kalem sayısına bir kutu de. Can = kutu + ' + a + ', Ali = kutu + ' + (a + b) + '.',
+        sol: steps([`Deniz = □, Can = □ + ${a}, Ali = □ + ${a + b}`, `3□ + ${2 * a + b} = ${S} ⇒ 3□ = ${S - 2 * a - b} ⇒ □ = ${d}`, `Ali = ${d} + ${a + b} = <b>${ali}</b>`]) });
+    }
+    const d = R(3, 15), a = R(2, 9), can = d + a, ali = 2 * can, S = d + can + ali;
+    return numQ({ topic: 'problem', level: 3, ans: ali, text: `Ali’nin kitaplarının sayısı Can’ınkinin 2 katıdır. Can’ın kitapları Deniz’inkinden ${a} fazladır. Üçünün toplam ${S} kitabı olduğuna göre Ali’nin kaç kitabı vardır?`,
+      distract: [can, d, ali + 2, 2 * d, Math.round(S / 2)],
+      hint: 'Deniz’e □ de. Can = □ + ' + a + ', Ali = 2 × (□ + ' + a + ').',
+      sol: steps([`Deniz = □, Can = □ + ${a}, Ali = 2□ + ${2 * a}`, `4□ + ${3 * a} = ${S} ⇒ □ = ${d}`, `Ali = 2 × ${can} = <b>${ali}</b>`]) });
+  },
+  l => {
+    for (let t = 0; t < 500; t++) {
+      const x = R(3, 30), a = R(2, 6), b = R(1, 15), c = R(2, 5), e = R(1, 10);
+      const s1 = x * a + b;
+      if (s1 % c) continue;
+      const s2 = s1 / c, y = s2 - e;
+      if (y <= 0) continue;
+      let ops, sol;
+      if (l === 1) { ops = `${a} ile çarptım ve çıkan sonuca ${b} ekledim. En son ${s1} buldum.`; sol = [`Sondan başa: ${s1} − ${b} = ${s1 - b}`, `${s1 - b} ÷ ${a} = <b>${x}</b>`]; }
+      else if (l === 2) { ops = `${a} ile çarptım, çıkan sonuca ${b} ekledim ve bulduğum sayıyı ${c} ile böldüm. En son ${s2} buldum.`; sol = [`${s2} × ${c} = ${s1}`, `${s1} − ${b} = ${s1 - b}`, `${s1 - b} ÷ ${a} = <b>${x}</b>`]; }
+      else { ops = `${a} ile çarptım, çıkan sonuca ${b} ekledim, bulduğum sayıyı ${c} ile böldüm ve sonuçtan ${e} çıkardım. En son ${y} buldum.`; sol = [`${y} + ${e} = ${s2}`, `${s2} × ${c} = ${s1}`, `${s1} − ${b} = ${s1 - b}`, `${s1 - b} ÷ ${a} = <b>${x}</b>`]; }
+      const fin = l === 1 ? s1 : l === 2 ? s2 : y;
+      return numQ({ topic: 'problem', level: l, ans: x, text: `Aklımdan bir sayı tuttum. Bu sayıyı ${ops} Aklımdan tuttuğum sayı kaçtır?`,
+        distract: [x + 1, x - 1, Math.round(fin / a), x + 2, fin],
+        hint: 'Sondan başa doğru git ve her işlemin tersini yap.',
+        sol: steps(sol) });
+    }
+  },
+  l => {
+    for (let t = 0; t < 300; t++) {
+      const a = l === 1 ? R(2, 3) : R(2, 5), b = a + 1, r = R(6, l === 3 ? 25 : 15), e = l === 1 ? 1 : R(1, 3);
+      const s = r - b * e; if (s < 1) continue;
+      const st = a * r + s;
+      return numQ({ topic: 'problem', level: l, ans: st, text: `Bir sınıfta her sıraya ${a} öğrenci oturursa ${s} öğrenci ayakta kalıyor. Her sıraya ${b} öğrenci oturursa ${e} sıra boş kalıyor. Sınıfta kaç öğrenci vardır?`,
+        distract: [r, a * r, b * r, st + b, st - a],
+        hint: `Önce sıra sayısını bul. Sıralara birer öğrenci daha eklemek, ayaktakilere ve boş sıralara oturacak öğrencilere ne olur?`,
+        sol: steps([`Sıra sayısına □ diyelim. ${a}□ + ${s} = ${b} × (□ − ${e})`, `${a}□ + ${s} = ${b}□ − ${b * e} ⇒ □ = ${s} + ${b * e} = ${r} sıra`, `Öğrenci sayısı: ${a} × ${r} + ${s} = <b>${st}</b>`]) });
+    }
+  }
+]);
+
+/* ---------- 7. Kesirler ---------- */
+T('kesir', 'Kesirler', '¾', {
+  facts: [
+    'Bir bütünün p/q kadarı: bütünü q eş parçaya böl, p tanesini al.',
+    'Bütünün p/q kadarı biliniyorsa: <b>bir parça = verilen ÷ p</b>, <b>bütün = bir parça × q</b>.',
+    '“Kalanın 1/4’ü” ifadesi <b>bütünün değil</b>, o an elde kalanın dörtte biridir.',
+    'Paydaları eşit kesirlerde payı büyük olan büyüktür. Payları eşit kesirlerde paydası küçük olan büyüktür.',
+    '1’e “eksiği” küçük olan kesir daha büyüktür: 9/10 > 7/8 çünkü 1/10 < 1/8.'
+  ],
+  tactic: 'Kesir problemlerini <b>şerit modeli</b> ile çiz: bütünü eş parçalı bir bant olarak düşün, verilen bilgiyi parçalara yaz.',
+  example: { q: 'Ali parasının 1/3’ü ile kitap aldı, kalanın 1/4’ü ile kalem aldı. Geriye 60 TL kaldı. Başta kaç TL’si vardı?', a: 'Kitaptan sonra paranın 2/3’ü kaldı. Kalemden sonra bunun 3/4’ü kaldı: 2/3 × 3/4 = 1/2. Yarısı 60 TL ise tamamı <b>120 TL</b>.' }
+}, [
+  l => {
+    let q = R(3, 9), p; do { p = R(1, q - 1); } while (gcd(p, q) !== 1);
+    const k = R(4, l === 1 ? 12 : 25), W = q * k;
+    if (l === 1) return numQ({ topic: 'kesir', level: 1, ans: W, text: `Bir kitabın ${fr(p, q)} kadarı ${p * k} sayfadır. Kitap kaç sayfadır?`,
+      distract: [p * k * q / p === W ? p * k + q : W + q, p * k * p, W + k, W - k, p * k],
+      hint: `Kitabı ${q} eş parçaya ayır. ${p} parça ${p * k} sayfa ise 1 parça kaç sayfa?`,
+      sol: steps([`1 parça: ${p * k} ÷ ${p} = ${k} sayfa`, `Bütün: ${k} × ${q} = <b>${W}</b> sayfa`]) });
+    if (l === 2) { const rest = (q - p) * k; return numQ({ topic: 'kesir', level: 2, ans: W, text: `Ayşe okuduğu kitabın ${fr(p, q)} kadarını bitirdi. Okuması gereken ${rest} sayfa kaldığına göre kitap kaç sayfadır?`,
+      distract: [p * k, rest + p * q, W + k, W - k, Math.round(rest * q / p)],
+      hint: `Okunan ${p}/${q} ise kalan kısım ${q - p}/${q} olur.`,
+      sol: steps([`Kalan kısım: ${q - p}/${q}`, `${q - p} parça = ${rest} sayfa ⇒ 1 parça = ${k}`, `Bütün: ${k} × ${q} = <b>${W}</b>`]) }); }
+    // l3: iki kesrin farkı
+    let q2 = R(3, 9), p2; do { p2 = R(1, q2 - 1); } while (gcd(p2, q2) !== 1 || p2 / q2 === p / q);
+    const L = lcm(q, q2); const unit = R(2, 8); const Wt = L * unit;
+    const diff = Math.abs(Wt * p / q - Wt * p2 / q2);
+    return numQ({ topic: 'kesir', level: 3, ans: Wt, text: `Bir kitabın ${fr(p, q)} kadarı ile ${fr(p2, q2)} kadarı arasındaki fark ${diff} sayfadır. Kitap kaç sayfadır?`,
+      distract: [Wt + L, Wt - L > 0 ? Wt - L : Wt + 2 * L, diff * L, Wt * 2, diff * q],
+      hint: `İki kesri aynı paydaya (${L}) çevir. Farkları kaç parça ediyor?`,
+      sol: steps([`${p}/${q} = ${p * L / q}/${L}, ${p2}/${q2} = ${p2 * L / q2}/${L}`, `Fark: ${Math.abs(p * L / q - p2 * L / q2)}/${L} ⇒ ${Math.abs(p * L / q - p2 * L / q2)} parça = ${diff} sayfa ⇒ 1 parça = ${unit}`, `Bütün: ${unit} × ${L} = <b>${Wt}</b>`]) });
+  },
+  l => {
+    const a = pick([2, 3, 4, 5]), b = pick([2, 3, 4, 5]), c = pick([2, 3, 4]);
+    const k = R(2, 12);
+    if (l === 1) { const T0 = a * k * 5, rest = T0 - T0 / a; return numQ({ topic: 'kesir', level: 1, ans: T0, text: `Selin parasının ${fr(1, a)} kadarıyla kitap aldı. Geriye ${rest} TL’si kaldı. Selin’in başlangıçta kaç TL’si vardı?`,
+      distract: [rest * a, rest + a, T0 / a, T0 + T0 / a], hint: `Parayı ${a} parçaya böl. Kaç parça kaldı?`,
+      sol: steps([`Kalan kısım: ${a - 1}/${a}`, `${a - 1} parça = ${rest} TL ⇒ 1 parça = ${rest / (a - 1)} TL`, `Başlangıç: ${rest / (a - 1)} × ${a} = <b>${T0}</b> TL`]) }); }
+    if (l === 2) { const T0 = a * b * k * 2, after1 = T0 - T0 / a, rest = after1 - after1 / b;
+      return numQ({ topic: 'kesir', level: 2, ans: T0, text: `Selin parasının ${fr(1, a)} kadarıyla kitap, kalan parasının ${fr(1, b)} kadarıyla kalem aldı. Geriye ${rest} TL’si kaldı. Başlangıçta kaç TL’si vardı?`,
+        distract: [after1, rest * a, T0 + rest / 2 % 1 === 0 ? T0 + rest / 2 : T0 + 10, Math.round(rest / (1 - 1 / a - 1 / b)) > 0 && Number.isInteger(Math.round(rest / (1 - 1 / a - 1 / b))) ? Math.round(rest / (1 - 1 / a - 1 / b)) : T0 - 10],
+        hint: 'Sondan başa git: kalemden önce ne kadar vardı? Kitaptan önce ne kadar vardı?',
+        sol: steps([`Kalemden sonra kalan, kalemden öncekinin ${b - 1}/${b} kadarı: ${rest} ⇒ kalemden önce ${after1} TL`, `Kitaptan sonra kalan, başlangıcın ${a - 1}/${a} kadarı: ${after1} ⇒ başlangıç <b>${T0}</b> TL`, 'Dikkat: “kalanın” 1/' + b + ' kadarı, bütünün değil!']) }); }
+    const T0 = a * b * c * k, s1 = T0 - T0 / a, s2 = s1 - s1 / b, s3 = s2 - s2 / c;
+    return numQ({ topic: 'kesir', level: 3, ans: T0, text: `Bir çiftçi elmalarının ${fr(1, a)} kadarını ilk gün, kalanın ${fr(1, b)} kadarını ikinci gün, yine kalanın ${fr(1, c)} kadarını üçüncü gün satıyor. Geriye ${s3} elma kaldığına göre çiftçinin başta kaç elması vardı?`,
+      distract: [s1, s2, T0 + s3, T0 * 2, s3 * a * b],
+      hint: 'Sondan başa git. Her gün, o güne kadar kalanın bir kısmı satılıyor.',
+      sol: steps([`3. günden önce: ${s3} ÷ (${c - 1}/${c}) = ${s2}`, `2. günden önce: ${s2} ÷ (${b - 1}/${b}) = ${s1}`, `Başta: ${s1} ÷ (${a - 1}/${a}) = <b>${T0}</b>`]) });
+  },
+  l => {
+    for (let t = 0; t < 300; t++) {
+      const q1 = pick([3, 4, 5, 6, 8, 10]), q2 = pick([3, 4, 5, 6, 8, 10]);
+      const p1 = R(1, q1 - 1), p2 = R(1, q2 - 1);
+      if (gcd(p1, q1) !== 1 || gcd(p2, q2) !== 1 || p2 / q2 <= p1 / q1) continue;
+      if (l === 1 && q1 !== q2) continue;
+      if (l > 1 && q1 === q2) continue;
+      const L = lcm(q1, q2); if (L > 40) continue;
+      const W = L * R(2, l === 3 ? 12 : 6); const add = W * p2 / q2 - W * p1 / q1;
+      if (!Number.isInteger(add)) continue;
+      const parts = p2 * L / q2 - p1 * L / q1;
+      return numQ({ topic: 'kesir', level: l, ans: W, text: `Bir su deposunun ${fr(p1, q1)} kadarı doluyken depoya ${add} litre su eklenince deponun ${fr(p2, q2)} kadarı doluyor. Deponun tamamı kaç litre su alır?`,
+        distract: [add * L, add * q2, W + L, W / 2 % 1 === 0 ? W / 2 : W + 2 * L, Math.round(add / (p2 / q2)) || W - L],
+        hint: `Eklenen su, iki kesrin farkı kadardır: ${p2}/${q2} − ${p1}/${q1}.`,
+        sol: steps([`${p2}/${q2} − ${p1}/${q1} = ${parts}/${L}`, `${parts} parça = ${add} litre ⇒ 1 parça = ${add / parts} litre`, `Tamamı: ${add / parts} × ${L} = <b>${W}</b> litre`]) });
+    }
+  },
+  l => {
+    let set = [];
+    const mk = () => {
+      if (l === 1) { const q = R(7, 15); const ps = shuffle(Array.from({ length: q - 1 }, (_, i) => i + 1)).slice(0, 5); return ps.map(p => [p, q]); }
+      if (l === 2) { const p = R(2, 7); const qs = shuffle(Array.from({ length: 12 }, (_, i) => p + 1 + i)).slice(0, 5); return qs.map(q => [p, q]); }
+      const ns = shuffle([2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]).slice(0, 5); return ns.map(n => [n - 1, n]);
+    };
+    set = mk();
+    const big = Math.random() < .6;
+    const vals = set.map(([p, q]) => p / q);
+    const best = big ? Math.max(...vals) : Math.min(...vals), bi = vals.indexOf(best);
+    const strs = set.map(([p, q]) => fr(p, q));
+    const why = l === 1 ? 'Paydalar eşit: payı büyük olan kesir büyüktür.' : l === 2 ? 'Paylar eşit: paydası küçük olan kesir büyüktür (parçalar daha büyük).' : 'Hepsinin 1’e eksiği 1/payda kadardır. Eksiği en küçük olan (paydası en büyük olan) en büyüktür.';
+    return txtQ({ topic: 'kesir', level: l, text: `Aşağıdaki kesirlerden hangisi <b>en ${big ? 'büyük' : 'küçük'}</b>tür?`,
+      hint: l === 3 ? 'Her kesrin 1’e ne kadar uzak olduğuna bak.' : l === 2 ? 'Payları aynı olan kesirlerde parçaların büyüklüğünü düşün.' : 'Paydalar aynı.',
+      sol: steps([why, `Cevap: ${strs[bi]}`]) }, strs[bi], strs.filter((_, i) => i !== bi));
+  },
+  l => {
+    for (let t = 0; t < 300; t++) {
+      const n = R(5, 11), p = R(1, n - 1);
+      if (gcd(p, n) !== 1 || 2 * p >= n) continue;
+      const k = R(2, l === 1 ? 4 : 8), T0 = n * k, girls = p * k, boys = T0 - girls, D = boys - girls;
+      if (l === 1) return numQ({ topic: 'kesir', level: 1, ans: boys, text: `${T0} kişilik bir sınıftaki öğrencilerin ${fr(p, n)} kadarı kızdır. Sınıfta kaç erkek öğrenci vardır?`,
+        distract: [girls, D, boys + k, T0 - p], hint: `Önce kızların sayısını bul: ${T0} ÷ ${n} × ${p}.`,
+        sol: steps([`Kızlar: ${T0} ÷ ${n} × ${p} = ${girls}`, `Erkekler: ${T0} − ${girls} = <b>${boys}</b>`]) });
+      return numQ({ topic: 'kesir', level: l, ans: T0, text: `Bir sınıftaki öğrencilerin ${fr(p, n)} kadarı kızdır. Erkek öğrenciler kız öğrencilerden ${D} kişi fazladır. Sınıf mevcudu kaçtır?`,
+        distract: [boys, D * n, T0 + n, D * p, girls + D],
+        hint: `Sınıfı ${n} parçaya böl: ${p} parça kız, ${n - p} parça erkek. Fark kaç parça?`,
+        sol: steps([`Kız ${p} parça, erkek ${n - p} parça ⇒ fark ${n - 2 * p} parça`, `${n - 2 * p} parça = ${D} kişi ⇒ 1 parça = ${k} kişi`, `Sınıf: ${k} × ${n} = <b>${T0}</b>`]) });
+    }
+  }
+]);
+
+/* ---------- 8. Geometri ---------- */
+T('geometri', 'Geometri', '△', {
+  facts: [
+    'Karenin çevresi = 4 × kenar, alanı = kenar × kenar. Dikdörtgenin çevresi = 2 × (kısa + uzun), alanı = kısa × uzun.',
+    'Bir üçgenin iç açıları toplamı <b>180°</b>. İkizkenar üçgende taban açıları eşittir.',
+    'n × n kareli bir karede toplam kare sayısı: 1² + 2² + … + n². 3 × 3 için 9 + 4 + 1 = 14.',
+    'Dış yüzeyi boyalı n × n × n küp 1×1×1 küplere bölünürse: köşelerdeki <b>8</b> küpün 3 yüzü, kenarlardaki <b>12 × (n − 2)</b> küpün 2 yüzü, yüzlerin ortasındaki <b>6 × (n − 2)²</b> küpün 1 yüzü boyalıdır; içteki <b>(n − 2)³</b> küp hiç boyanmaz.',
+    'Saat kadranı 360°, 12 bölme ⇒ her saat aralığı <b>30°</b>. Yelkovan dakikada 6°, akrep dakikada 0,5° döner.'
+  ],
+  tactic: 'Şekil çiz! Şekli olmayan soruda bile kendi şeklini çiz ve bilinenleri üzerine yaz. Sayma sorularında şekilleri <b>büyüklüğüne göre</b> grupla.',
+  example: { q: 'Saat tam 3.30 iken akrep ile yelkovan arasındaki dar açı kaç derecedir?', a: 'Yelkovan 6’da (180°). Akrep 3 ile 4’ün tam ortasında: 90° + 15° = 105°. Fark: 180° − 105° = <b>75°</b>.' }
+}, [
+  l => {
+    if (l < 3) {
+      const n = l === 1 ? R(2, 3) : R(4, 5); let ans = 0; for (let k = 1; k <= n; k++) ans += k * k;
+      return numQ({ topic: 'geometri', level: l, ans, fig: svgGrid(n, n), text: `Şekildeki ${n} × ${n} kareli şekilde, her büyüklükte toplam kaç tane kare vardır?`,
+        distract: [n * n, n * n + 1, ans - 1, ans + n, 2 * n * n],
+        hint: 'Kareleri büyüklüklerine göre say: 1×1, 2×2, …',
+        sol: steps(Array.from({ length: n }, (_, i) => `${i + 1}×${i + 1} kareler: ${(n - i) * (n - i)}`).concat([`Toplam: <b>${ans}</b>`])) });
+    }
+    const a = R(2, 4), b = R(a + 1, 6); let ans = 0; const parts = [];
+    for (let k = 1; k <= a; k++) { ans += (a - k + 1) * (b - k + 1); parts.push(`${k}×${k} kareler: ${a - k + 1} × ${b - k + 1} = ${(a - k + 1) * (b - k + 1)}`); }
+    return numQ({ topic: 'geometri', level: 3, ans, fig: svgGrid(b, a), text: `Şekildeki ${b} × ${a} kareli dikdörtgende, her büyüklükte toplam kaç tane kare vardır?`,
+      distract: [a * b, a * b + a, ans - 1, ans + a, ans + b],
+      hint: 'Her büyüklükteki kare, yatayda ve dikeyde kaç farklı konuma yerleşebilir?',
+      sol: steps(parts.concat([`Toplam: <b>${ans}</b>`])) });
+  },
+  l => {
+    if (l === 1) { const s = R(3, 15), P = 4 * s; return numQ({ topic: 'geometri', level: 1, ans: s * s, text: `Çevresi ${P} cm olan bir karenin alanı kaç cm²’dir?`,
+      distract: [P, 4 * s, s * 2, (P / 2) * (P / 2) > 999 ? s * s + s : (P / 2) * (P / 2), s * s + 2 * s], hint: 'Önce bir kenarı bul.',
+      sol: steps([`Kenar: ${P} ÷ 4 = ${s} cm`, `Alan: ${s} × ${s} = <b>${s * s}</b> cm²`]) }); }
+    if (l === 2) { const a = R(3, 12), b = R(a + 1, 20), A = a * b, P = 2 * (a + b);
+      return numQ({ topic: 'geometri', level: 2, ans: P, text: `Alanı ${A} cm² olan dikdörtgenin bir kenarı ${a} cm ise çevresi kaç cm’dir?`,
+        distract: [a + b, A / 2 % 1 === 0 ? A / 2 : P + 2, P + 2 * a, 4 * b, 2 * A / a], hint: 'Alan = kısa × uzun. Önce diğer kenarı bul.',
+        sol: steps([`Diğer kenar: ${A} ÷ ${a} = ${b} cm`, `Çevre: 2 × (${a} + ${b}) = <b>${P}</b> cm`]) }); }
+    const h = R(2, 10), s = 2 * h, Cc = 2 * (s + h);
+    return numQ({ topic: 'geometri', level: 3, ans: s * s, text: `Bir kare, bir kenarına paralel bir doğru boyunca iki eş dikdörtgene kesiliyor. Dikdörtgenlerden birinin çevresi ${Cc} cm ise karenin alanı kaç cm²’dir?`,
+      distract: [Cc * Cc / 16 % 1 === 0 ? Cc * Cc / 16 : s * s + s, s * h, 4 * s, s * s / 2, (s + 2) * (s + 2)],
+      hint: 'Karenin kenarına a dersen dikdörtgenin kenarları a ve a/2 olur.',
+      sol: steps([`Dikdörtgenin kenarları: a ve a ÷ 2`, `Çevre: 2 × (a + a ÷ 2) = 3a = ${Cc} ⇒ a = ${s} cm`, `Karenin alanı: ${s} × ${s} = <b>${s * s}</b> cm²`]) });
+  },
+  l => {
+    const n = l === 1 ? 3 : l === 2 ? 4 : R(5, 6);
+    const k = l === 1 ? pick([3, 2]) : l === 2 ? pick([2, 1]) : pick([1, 0]);
+    const cnt = { 3: 8, 2: 12 * (n - 2), 1: 6 * (n - 2) ** 2, 0: (n - 2) ** 3 };
+    const ans = cnt[k];
+    const phrase = k === 0 ? 'hiçbir yüzü boyalı olmayan' : `tam olarak ${k} yüzü boyalı olan`;
+    const where = { 3: 'Köşelerdeki küpler: her küpte 8 köşe', 2: `Kenarların ortasındaki küpler (köşeler hariç): 12 kenar × (${n} − 2)`, 1: `Yüzlerin ortasındaki küpler: 6 yüz × (${n} − 2)²`, 0: `İçteki küp: (${n} − 2)³` }[k];
+    return numQ({ topic: 'geometri', level: l, ans, text: `Dış yüzeyinin tamamı boyanmış ${n} × ${n} × ${n} boyutlarındaki bir küp, 1 × 1 × 1 boyutlarında ${n ** 3} küçük küpe ayrılıyor. Küçük küplerden kaç tanesi <b>${phrase}</b> küptür?`,
+      distract: [cnt[3], cnt[2], cnt[1], cnt[0], n ** 3, 6 * n, 12 * n].filter(v => v !== ans),
+      hint: 'Küçük küplerin yerini düşün: köşede mi, kenarda mı, yüzün ortasında mı, içeride mi?',
+      sol: steps([where, `Sonuç: <b>${ans}</b>`, `Kontrol: 8 + ${cnt[2]} + ${cnt[1]} + ${cnt[0]} = ${8 + cnt[2] + cnt[1] + cnt[0]} = ${n}³ ✓`]) });
+  },
+  l => {
+    if (l === 1) { const a = R(30, 90), b = R(20, 150 - a), c = 180 - a - b; return numQ({ topic: 'geometri', level: 1, ans: c, text: `Bir üçgenin iki iç açısının ölçüleri ${a}° ve ${b}° olarak veriliyor. Üçüncü açısı kaç derecedir?`,
+      distract: [a + b, 360 - a - b, c + 10, c - 10, 90], show: v => v + '°', hint: 'Üçgenin iç açıları toplamı 180°.',
+      sol: steps([`180° − ${a}° − ${b}° = <b>${c}°</b>`]) }); }
+    if (l === 2) { if (Math.random() < .5) { const tepe = 2 * R(10, 70), taban = (180 - tepe) / 2; return numQ({ topic: 'geometri', level: 2, ans: taban, show: v => v + '°', text: `Bir ikizkenar üçgenin tepe açısı ${tepe}° ise taban açılarından biri kaç derecedir?`,
+      distract: [180 - tepe, tepe, taban + 10, taban - 5, tepe / 2], hint: 'İki taban açısı eşit ve toplamları 180° − tepe açısı.',
+      sol: steps([`İki taban açısının toplamı: 180° − ${tepe}° = ${180 - tepe}°`, `Biri: ${180 - tepe}° ÷ 2 = <b>${taban}°</b>`]) }); }
+      const taban = R(25, 80), tepe = 180 - 2 * taban; return numQ({ topic: 'geometri', level: 2, ans: tepe, show: v => v + '°', text: `Bir ikizkenar üçgenin taban açılarından biri ${taban}° ise tepe açısı kaç derecedir?`,
+        distract: [180 - taban, taban, tepe + 10, 90 - taban > 0 ? 90 - taban : tepe + 20, 2 * taban], hint: 'İki taban açısı eşittir.',
+        sol: steps([`Taban açıları: ${taban}° + ${taban}° = ${2 * taban}°`, `Tepe: 180° − ${2 * taban}° = <b>${tepe}°</b>`]) }); }
+    const h = R(1, 11), half = Math.random() < .6;
+    let ang, sol;
+    if (!half) { ang = Math.min(30 * h, 360 - 30 * h); sol = [`Her saat aralığı 30°.`, `Tam ${h}.00’de yelkovan 12’de, akrep ${h}’te: ${h} aralık = ${30 * h}°`, ang !== 30 * h ? `Dar açı: 360° − ${30 * h}° = <b>${ang}°</b>` : `Açı: <b>${ang}°</b>`]; }
+    else { const hr = 30 * h + 15, mn = 180; const d = Math.abs(hr - mn); ang = Math.min(d, 360 - d); sol = [`Yelkovan 6’da: 180°`, `Akrep ${h} ile ${h + 1} arasının tam ortasında: ${30 * h}° + 15° = ${hr}°`, `Fark: <b>${ang}°</b>`]; }
+    return numQ({ topic: 'geometri', level: 3, ans: ang, show: v => v + '°', text: `Saat tam ${h}.${half ? '30' : '00'} iken akrep ile yelkovan arasındaki küçük açı kaç derecedir?`,
+      distract: [half ? Math.min(Math.abs(30 * h - 180), 360 - Math.abs(30 * h - 180)) : ang + 15, ang + 30, ang - 15 > 0 ? ang - 15 : ang + 45, 360 - ang > 180 ? ang + 5 : 360 - ang],
+      hint: 'Kadranda iki sayı arası 30°. Yarım saatte akrep, iki sayı arasının yarısı kadar (15°) ilerler.',
+      sol: steps(sol) });
+  },
+  l => {
+    const k = R(3, 7);
+    if (l === 1) { const a = R(2, 9), P = 2 * (k * a + a); return numQ({ topic: 'geometri', level: 1, ans: P, fig: svgSquaresRow(k), text: `Kenar uzunluğu ${a} cm olan ${k} tane kare, şekildeki gibi yan yana birleştirilerek bir dikdörtgen oluşturuluyor. Dikdörtgenin çevresi kaç cm’dir?`,
+      distract: [4 * a * k, k * a + a, P + 2 * a, P - 2 * a, k * a * a], hint: 'Oluşan dikdörtgenin uzun kenarı ve kısa kenarı kaç cm?',
+      sol: steps([`Uzun kenar: ${k} × ${a} = ${k * a} cm, kısa kenar: ${a} cm`, `Çevre: 2 × (${k * a} + ${a}) = <b>${P}</b> cm`, `4 × ${a} × ${k} = ${4 * a * k} yanlış olur; birleşen kenarlar artık çevrede değil.`]) }); }
+    if (l === 2) { const s = R(2, 9), Pk = 4 * s, P = 2 * (k + 1) * s; return numQ({ topic: 'geometri', level: 2, ans: P, fig: svgSquaresRow(k), text: `Çevresi ${Pk} cm olan ${k} tane eş kare, şekildeki gibi yan yana birleştirilerek bir dikdörtgen oluşturuluyor. Dikdörtgenin çevresi kaç cm’dir?`,
+      distract: [Pk * k, Pk * k - 2 * s, P + 2 * s, P - 2 * s, k * s], hint: 'Önce bir karenin kenarını bul.',
+      sol: steps([`Karenin kenarı: ${Pk} ÷ 4 = ${s} cm`, `Dikdörtgen: ${k * s} cm × ${s} cm`, `Çevre: 2 × (${k * s} + ${s}) = <b>${P}</b> cm`]) }); }
+    const s = R(2, 9), P = 2 * (k + 1) * s;
+    return numQ({ topic: 'geometri', level: 3, ans: k * s * s, fig: svgSquaresRow(k), text: `${k} tane eş kare, şekildeki gibi yan yana birleştirilerek çevresi ${P} cm olan bir dikdörtgen oluşturuluyor. Dikdörtgenin alanı kaç cm²’dir?`,
+      distract: [s * s, P, k * s, (k + 1) * s * s, k * s * s + s],
+      hint: 'Karenin kenarına a dersen dikdörtgenin çevresi 2 × (' + k + 'a + a) = ' + (2 * (k + 1)) + 'a olur.',
+      sol: steps([`Çevre = ${2 * (k + 1)} × a = ${P} ⇒ a = ${s} cm`, `Alan = ${k} kare × ${s * s} cm² = <b>${k * s * s}</b> cm²`]) });
+  }
+]);
+
+/* ---------- 9. Saat ve Takvim ---------- */
+T('zaman', 'Saat ve Takvim', '12:00', {
+  facts: [
+    'Hafta 7 gün sürer. N gün sonrası için N’yi 7’ye böl: <b>kalan kadar gün ileri</b> say.',
+    'Artık olmayan bir yıl 365 gündür = 52 hafta + 1 gün. Bu yüzden bir tarih her yıl bir gün kayar.',
+    'Ayların gün sayıları: Ocak 31, Şubat 28 (artık yılda 29), Mart 31, Nisan 30, Mayıs 31, Haziran 30, Temmuz 31, Ağustos 31, Eylül 30, Ekim 31, Kasım 30, Aralık 31.',
+    '1 saat = 60 dakika. Dakikaları toplarken 60’ı geçince saate aktar (100 değil!).'
+  ],
+  tactic: 'Günlerde <b>7’nin katlarını at</b>. 100 gün = 14 hafta + 2 gün ⇒ sadece 2 gün ilerlemek yeterli.',
+  example: { q: 'Bugün Salı. 100 gün sonra hangi gün?', a: '100 = 7 × 14 + 2. Salı’dan 2 gün ileri: <b>Perşembe</b>.' }
+}, [
+  l => {
+    const di = R(0, 6), N = l === 1 ? R(9, 40) : l === 2 ? R(100, 800) : R(50, 400);
+    const back = l === 3;
+    const ai = back ? ((di - N) % 7 + 7) % 7 : (di + N) % 7;
+    const wrongs = [GUNLER[(ai + 1) % 7], GUNLER[(ai + 6) % 7], GUNLER[di] !== GUNLER[ai] ? GUNLER[di] : GUNLER[(ai + 2) % 7], GUNLER[(ai + 2) % 7], GUNLER[(ai + 5) % 7]];
+    return txtQ({ topic: 'zaman', level: l, text: `Bugün günlerden <b>${GUNLER[di]}</b>. Bugünden ${N} gün ${back ? 'önce' : 'sonra'} günlerden hangisidir?`,
+      hint: `${N} günün içinde kaç tam hafta var? Kalan günleri ${back ? 'geriye' : 'ileriye'} say.`,
+      sol: steps([`${N} = 7 × ${Math.floor(N / 7)} + ${N % 7}`, `Tam haftalar günü değiştirmez. ${GUNLER[di]} gününden ${N % 7} gün ${back ? 'geri' : 'ileri'}: <b>${GUNLER[ai]}</b>`]) }, GUNLER[ai], wrongs);
+  },
+  l => {
+    const di = R(0, 6), m = l === 1 ? R(0, 1) : l === 2 ? R(1, 5) : R(5, 11), d = R(1, AYGUN[m]);
+    if (m === 0 && d === 1) return TOPICS.find(t => t.id === 'zaman').gens[0](l);
+    let off = d - 1; for (let i = 0; i < m; i++) off += AYGUN[i];
+    const ai = (di + off) % 7;
+    const wrongs = [GUNLER[(ai + 1) % 7], GUNLER[(ai + 6) % 7], GUNLER[(ai + 2) % 7], GUNLER[(ai + 5) % 7]];
+    const monthsText = m ? AYLAR.slice(0, m).map((a, i) => `${a} ${AYGUN[i]}`).join(' + ') : '';
+    return txtQ({ topic: 'zaman', level: l, text: `Artık yıl olmayan bir yılda 1 Ocak günlerden <b>${GUNLER[di]}</b> ise aynı yılın <b>${d} ${AYLAR[m]}</b> günü hangi güne denk gelir?`,
+      hint: '1 Ocak’tan bu tarihe kadar kaç gün geçtiğini bul, sonra 7’ye böl.',
+      sol: steps([m ? `Önceki ayların günleri: ${monthsText} = ${off - (d - 1)}` : `Aynı ay içinde`, `Geçen gün: ${m ? off - (d - 1) + ' + ' : ''}${d - 1} = ${off}`, `${off} = 7 × ${Math.floor(off / 7)} + ${off % 7} ⇒ ${GUNLER[di]} gününden ${off % 7} gün ileri: <b>${GUNLER[ai]}</b>`]) }, GUNLER[ai], wrongs);
+  },
+  l => {
+    const st = R(6, 20) * 60 + R(0, 11) * 5, M = l === 1 ? R(9, 30) * 5 : l === 2 ? R(30, 120) * 5 : R(120, 250) * 5;
+    const ans = st + M;
+    const hrs = Math.floor(M / 60), mins = M % 60;
+    const bad100 = st + Math.floor(M / 100) * 60 + (M % 100);
+    return numQ({ topic: 'zaman', level: l, ans, show: toTime, min: -1e9, text: `Bir tren saat ${toTime(st)} itibarıyla yola çıkıyor ve yolculuk ${M} dakika sürüyor. Tren varış noktasına saat kaçta ulaşır?`,
+      distract: [bad100, ans + 60, ans - 60, ans + 10, ans - 10],
+      hint: 'Dakikaları saate çevir: 60 dakika = 1 saat.',
+      sol: steps([`${M} dakika = ${hrs} saat ${mins} dakika`, `${toTime(st)} + ${hrs} sa ${mins} dk = <b>${toTime(ans)}</b>`]) });
+  },
+  l => {
+    const g = l === 3 ? R(4, 9) : R(2, 5), x = l === 1 ? R(3, 6) : l === 2 ? R(7, 15) : R(10, 20);
+    const geri = l === 3;
+    const ans = 720 + (geri ? -1 : 1) * g * x;
+    return numQ({ topic: 'zaman', level: l, ans, show: toTime, min: -1e9, text: `Bir duvar saati her gün ${g} dakika ${geri ? 'geri kalıyor' : 'ileri gidiyor'}. Saat bir gün öğlen tam 12.00 iken doğru saate ayarlanıyor. ${x} gün sonra, gerçek saat öğlen 12.00 iken bu duvar saati saat kaçı gösterir?`,
+      distract: [720 + (geri ? 1 : -1) * g * x, 720 + (geri ? -1 : 1) * g * (x - 1), 720 + (geri ? -1 : 1) * g * (x + 1), 720 + (geri ? -1 : 1) * (g + x)],
+      hint: `${x} günde toplam kaç dakika ${geri ? 'geri kalır' : 'ileri gider'}?`,
+      sol: steps([`${x} gün × ${g} dakika = ${g * x} dakika`, `12:00 ${geri ? '−' : '+'} ${g * x} dakika = <b>${toTime(ans)}</b>`]) });
+  }
+]);
+
+/* ---------- 10. En Kötü Durum (Güvercin Yuvası) ---------- */
+T('guvercin', 'En Kötü Durum', '□□', {
+  facts: [
+    '<b>Güvercin yuvası ilkesi</b>: n yuvaya n + 1 güvercin girerse, en az bir yuvada 2 güvercin olur.',
+    '“<b>Kesinlikle</b>” ve “<b>garanti</b>” kelimeleri en kötü şansı düşünmeni ister.',
+    'Aynı renkten k tane garantilemek için: her renkten k − 1 tane çektiğini düşün (o kadar yoksa hepsini), sonra 1 tane daha çek.',
+    'Belirli bir renkten (örneğin kırmızı) k tane garantilemek için: diğer renklerin hepsini çektiğini düşün, sonra k kırmızı.'
+  ],
+  tactic: 'Kendine “<b>En şanssız ben olsaydım</b> kaç tane çekerdim ve hâlâ istediğimi alamazdım?” diye sor. Cevap bu sayının 1 fazlası.',
+  example: { q: 'Çekmecede 5 kırmızı, 7 mavi çorap var. Karanlıkta en az kaç çorap çekersen kesinlikle aynı renkten 2 çorabın olur?', a: 'En kötü durumda 1 kırmızı, 1 mavi çekersin. Bir sonraki mutlaka eşleşir: <b>3</b>.' }
+}, [
+  l => {
+    const names = ['kırmızı', 'mavi', 'yeşil', 'sarı'];
+    const nc = l === 1 ? R(2, 3) : R(3, 4);
+    const cs = Array.from({ length: nc }, () => R(3, 12));
+    const list = cs.map((c, i) => `${c} ${names[i]}`).join(', ').replace(/, ([^,]*)$/, ' ve $1');
+    const total = cs.reduce((a, b) => a + b);
+    if (l === 1) return numQ({ topic: 'guvercin', level: 1, ans: nc + 1, text: `Bir çekmecede ${list} çorap vardır. Karanlıkta hiç bakmadan en az kaç çorap çekilirse kesinlikle aynı renkten 2 çorap elde edilmiş olur?`,
+      distract: [nc, 2, nc + 2, Math.max(...cs) + 1, total],
+      hint: 'En kötü durumda her çektiğin farklı renk olur. Kaç tane farklı renk var?',
+      sol: steps([`En kötü durumda ilk ${nc} çorap birbirinden farklı renkte çıkar.`, `Bir sonraki çorap mutlaka bunlardan biriyle aynı renktir: ${nc} + 1 = <b>${nc + 1}</b>`]) });
+    if (l === 2) {
+      const k = R(3, 4); if (!cs.some(c => c >= k)) cs[0] = k + 2;
+      const worst = cs.reduce((s, c) => s + Math.min(c, k - 1), 0), ans = worst + 1;
+      const list2 = cs.map((c, i) => `${c} ${names[i]}`).join(', ').replace(/, ([^,]*)$/, ' ve $1');
+      return numQ({ topic: 'guvercin', level: 2, ans, text: `Bir kutuda ${list2} top vardır. Bakmadan en az kaç top çekilirse kesinlikle aynı renkten ${k} top elde edilmiş olur?`,
+        distract: [(k - 1) * nc, k * nc, ans + 1, nc + 1, ans - 1],
+        hint: `En kötü durumda her renkten ${k - 1} tane çekersin (bir renkte o kadar top yoksa hepsini).`,
+        sol: steps([`En kötü durum: ${cs.map((c, i) => `${Math.min(c, k - 1)} ${names[i]}`).join(', ')} = ${worst} top, hâlâ aynı renkten ${k} yok.`, `Bir top daha: ${worst} + 1 = <b>${ans}</b>`]) });
+    }
+    if (Math.random() < .5) {
+      const k = R(2, Math.min(4, cs[0])), ans = total - cs[0] + k;
+      return numQ({ topic: 'guvercin', level: 3, ans, text: `Bir kutuda ${list} top vardır. Bakmadan en az kaç top çekilirse kesinlikle ${k} tane kırmızı top elde edilmiş olur?`,
+        distract: [k, total - cs[0], nc * (k - 1) + 1, ans - 1, total],
+        hint: 'En kötü durumda önce kırmızı olmayan topların hepsi çıkar.',
+        sol: steps([`Kırmızı olmayan top: ${total - cs[0]}. En kötü durumda önce hepsi çıkar.`, `Sonra ${k} kırmızı: ${total - cs[0]} + ${k} = <b>${ans}</b>`]) });
+    }
+    const mn = Math.min(...cs), ans = total - mn + 1;
+    return numQ({ topic: 'guvercin', level: 3, ans, text: `Bir kutuda ${list} top vardır. Bakmadan en az kaç top çekilirse kesinlikle <b>her renkten en az bir</b> top elde edilmiş olur?`,
+      distract: [nc, total - mn, total - Math.max(...cs) + 1, total, ans + 1],
+      hint: 'En kötü durumda, en az sayıda olan renk en sona kalır.',
+      sol: steps([`En az olan renk ${mn} top. En kötü durumda diğer renklerin hepsi önce çıkar: ${total - mn} top.`, `Bir sonraki top son rengi getirir: ${total - mn} + 1 = <b>${ans}</b>`]) });
+  },
+  l => {
+    const useMonth = Math.random() < .6, g = useMonth ? 12 : 7, what = useMonth ? 'aynı ayda' : 'haftanın aynı gününde';
+    if (l < 3) {
+      const k = l === 1 ? 2 : R(3, 5), ans = g * (k - 1) + 1;
+      return numQ({ topic: 'guvercin', level: l, ans, text: `Bir okulda en az kaç öğrenci olmalıdır ki, kesinlikle ${what} doğmuş ${k} öğrenci bulunsun?`,
+        distract: [g * k, g * (k - 1), g + k, ans + 1, g * k + 1],
+        hint: `${g} tane “yuva” (${useMonth ? 'ay' : 'gün'}) var. En kötü durumda her yuvada ${k - 1} öğrenci olur.`,
+        sol: steps([`En kötü durum: her ${useMonth ? 'ayda' : 'günde'} ${k - 1} öğrenci ⇒ ${g} × ${k - 1} = ${g * (k - 1)} öğrenci, hâlâ ${k} kişilik grup yok.`, `Bir öğrenci daha: <b>${ans}</b>`]) });
+    }
+    const N = R(40, 200), ans = Math.ceil(N / g);
+    return numQ({ topic: 'guvercin', level: 3, ans, text: `Bir okulda ${N} öğrenci vardır. Bu okulda ${what} doğmuş en az kaç öğrenci <b>kesinlikle</b> vardır?`,
+      distract: [Math.floor(N / g) === ans ? ans + 1 : Math.floor(N / g), ans + 1, ans - 1, N % g || ans + 2, g],
+      hint: `Öğrencileri ${g} gruba olabildiğince eşit dağıt. En kalabalık grupta kaç kişi olur?`,
+      sol: steps([`${N} ÷ ${g} = ${Math.floor(N / g)}, kalan ${N % g}`, N % g ? `Eşit dağıtınca ${N % g} grupta bir fazla kişi olur ⇒ en kalabalık grup <b>${ans}</b>` : `Tam eşit dağılırsa her grupta ${ans} kişi ⇒ <b>${ans}</b>`]) });
+  }
+]);
+
+/* ---------- 11. Mantık ve Zeka (seçilmiş sorular) ---------- */
+T('mantik', 'Mantık ve Zekâ', '∴', {
+  facts: [
+    '<b>Doğrucu–yalancı</b> sorularında her kişiyi sırayla “doğru söylüyor” kabul et ve çelişki çıkıp çıkmadığına bak.',
+    '“Sadece biri doğru söylüyor” gibi şartlarda <b>durumları tek tek dene</b>: suçlu A olsaydı, B olsaydı…',
+    'Kesim–aralık soruları: Bir kütüğü n parçaya ayırmak için <b>n − 1 kesim</b> gerekir. Zil n kez çalarsa n − 1 aralık vardır.',
+    'Tartı soruları: Eşit kollu terazi her tartıda 3 sonuç verir (sol ağır, sağ ağır, eşit). Grupları <b>3’e</b> böl.'
+  ],
+  tactic: 'Soruyu <b>yavaş oku</b>. Olimpiyatta tuzaklar genelde bir kelimede saklanır: “hariç”, “en az”, “kesinlikle”, “arasında”.',
+  example: { q: 'Bir kütüğü 4 parçaya kesmek 12 dakika sürüyor. Aynı kütüğü 7 parçaya kesmek kaç dakika sürer?', a: '4 parça = 3 kesim ⇒ bir kesim 4 dakika. 7 parça = 6 kesim ⇒ 6 × 4 = <b>24 dakika</b>.' }
+}, []);
+
+/* Seçilmiş klasik sorular: [konu, seviye, metin, doğru, [yanlışlar], ipucu, çözüm, şekil] */
+const CURATED = [
+  ['mantik', 1, 'Bir çiftçinin 17 koyunu vardır. <b>9 tanesi hariç</b> hepsi kaçtı. Çiftçinin kaç koyunu kaldı?', '9', ['8', '17', '26', '0'], '“Hariç” kelimesine dikkat!', steps(['“9 tanesi hariç hepsi kaçtı” ⇒ kaçmayanlar 9 tane.', 'Cevap: <b>9</b>'])],
+  ['mantik', 2, 'Ayşe, Banu ve Cem’den biri vazoyu kırmıştır. Ayşe: “Ben kırmadım.” Banu: “Cem kırdı.” Cem: “Banu yalan söylüyor.” Bu üçünden <b>sadece biri</b> doğru söylediğine göre vazoyu kim kırmıştır?', 'Ayşe', ['Banu', 'Cem', 'Ayşe veya Banu', 'Belirlenemez'], 'Her kişiyi sırayla suçlu kabul et ve kaç kişinin doğru söylediğini say.', steps(['Suçlu Banu olsaydı: Ayşe doğru, Banu yanlış, Cem doğru ⇒ 2 doğru ✗', 'Suçlu Cem olsaydı: Ayşe doğru, Banu doğru, Cem yanlış ⇒ 2 doğru ✗', 'Suçlu Ayşe olsaydı: Ayşe yanlış, Banu yanlış, Cem doğru ⇒ 1 doğru ✓', 'Cevap: <b>Ayşe</b>'])],
+  ['mantik', 3, 'Bir adada <b>doğrucular</b> her zaman doğru, <b>yalancılar</b> her zaman yalan söyler. Adada karşılaştığın A kişisi, yanındaki B için şöyle diyor: “<i>İkimiz de yalancıyız.</i>” A ve B nedir?', 'A yalancı, B doğrucu', ['İkisi de yalancı', 'İkisi de doğrucu', 'A doğrucu, B yalancı', 'Belirlenemez'], 'A doğrucu olabilir mi? Olsaydı kendisi hakkında ne söylemiş olurdu?', steps(['A doğrucu olsaydı “ikimiz de yalancıyız” derken kendisine yalancı demiş olurdu: çelişki.', 'O halde A yalancı ve sözü yanlış. “İkimiz de yalancıyız” yanlış ise ikisi birden yalancı değildir.', 'A yalancı olduğuna göre B doğrucudur: <b>A yalancı, B doğrucu</b>'])],
+  ['mantik', 2, '10 metre derinliğindeki bir kuyunun dibindeki kurbağa, her gündüz 3 metre tırmanıyor, her gece 2 metre aşağı kayıyor. Kurbağa kaçıncı gün kuyudan çıkar?', '8', ['10', '7', '9', '5'], 'Son gün kurbağa çıktığında artık geri kaymaz!', steps(['Her tam gün (gündüz + gece) net 1 metre ilerler.', '7 günün sonunda 7 metrededir.', '8. gündüz 3 metre tırmanıp 10 metreye ulaşır ve çıkar: <b>8. gün</b>'])],
+  ['mantik', 1, 'Bir saat 3 kez çaldığında ilk çalıştan son çalışa kadar 3 saniye geçiyor. Çalışlar arası süre hep aynıysa, bu saat 6 kez çaldığında ilk çalıştan son çalışa kadar kaç saniye geçer?', '7,5', ['6', '9', '5', '12'], '3 çalışta kaç aralık var?', steps(['3 çalış ⇒ 2 aralık = 3 saniye ⇒ 1 aralık = 1,5 saniye', '6 çalış ⇒ 5 aralık = 5 × 1,5 = <b>7,5 saniye</b>'])],
+  ['mantik', 2, 'Bir kütüğü 4 parçaya kesmek 12 dakika sürüyor. Aynı hızla kesilirse bir kütüğü 7 parçaya kesmek kaç dakika sürer?', '24', ['21', '28', '18', '36'], 'Parça sayısı ile kesim sayısı aynı değil.', steps(['4 parça = 3 kesim ⇒ 1 kesim = 4 dakika', '7 parça = 6 kesim ⇒ 6 × 4 = <b>24 dakika</b>'])],
+  ['mantik', 3, 'Görünüşleri aynı 9 bozuk paradan biri diğerlerinden daha hafiftir. Eşit kollu bir terazi ile en az kaç tartıda hafif para <b>kesinlikle</b> bulunur?', '2', ['3', '4', '1', '5'], 'Paraları 3 gruba ayır. Bir tartı hangi grupta olduğunu söyler.', steps(['9 parayı 3’erli üç gruba ayır, iki grubu tart. Eşitse hafif para üçüncü grupta; değilse hafif olan taraftadır. (1. tartı)', 'Kalan 3 paradan ikisini tart. Eşitse üçüncüsü, değilse hafif olan taraf. (2. tartı)', 'Cevap: <b>2</b>'])],
+  ['mantik', 2, '3 kedi 3 fareyi 3 dakikada yakalıyor. Aynı hızla, 100 fareyi 100 dakikada kaç kedi yakalar?', '3', ['100', '33', '9', '1'], 'Bir kedi bir fareyi kaç dakikada yakalıyor?', steps(['3 kedi 3 dakikada 3 fare ⇒ her kedi 3 dakikada 1 fare yakalar.', '100 dakikada bir kedi yaklaşık 33 fare yakalar; 3 kedi ise 3 dakikada 3, 99 dakikada 99 fare yakalar ve 100. fareyi de son dakikalarda bitirir.', 'Olimpiyat tarzı cevap: hız aynı kaldığı için <b>3 kedi</b> yeterlidir.'])],
+  ['mantik', 1, 'Bir kitap “4 TL artı kendi fiyatının yarısı” kadardır. Kitap kaç TL’dir?', '8', ['6', '4', '12', '2'], 'Kitabın fiyatının yarısı 4 TL’ye eşit olmalı.', steps(['Fiyat = 4 + fiyatın yarısı ⇒ fiyatın diğer yarısı 4 TL’dir.', 'Fiyat: <b>8 TL</b>'])],
+  ['mantik', 3, 'Bir merdivenin tam ortasındaki basamakta duruyorum. 5 basamak çıktım, 7 basamak indim, sonra 10 basamak çıktım ve en üst basamağa ulaştım. Merdiven kaç basamaklıdır?', '17', ['16', '18', '19', '15'], 'Ortadan en üste kaç basamak çıktın? Orta basamağın altında ve üstünde eşit sayıda basamak vardır.', steps(['Net hareket: +5 − 7 + 10 = 8 basamak yukarı.', 'Ortadaki basamağın üstünde 8 basamak, altında da 8 basamak var.', 'Toplam: 8 + 1 + 8 = <b>17</b>'])],
+  ['mantik', 3, 'Bir ailede her erkek çocuğun, erkek kardeşi kadar kız kardeşi var. Her kız çocuğun ise kız kardeşlerinin 2 katı kadar erkek kardeşi var. Ailede kaç çocuk vardır?', '7', ['5', '6', '8', '9'], 'Erkek sayısı E, kız sayısı K olsun. Bir erkeğin erkek kardeşi E − 1 tanedir.', steps(['Erkek için: E − 1 = K', 'Kız için: E = 2 × (K − 1)', 'K = E − 1 yerine yaz: E = 2 × (E − 2) ⇒ E = 4, K = 3', 'Toplam: <b>7</b>'])],
+  ['mantik', 2, 'Yuvarlak bir masanın etrafında 6 kişi oturuyor. Her kişi, yanında oturan iki kişi dışında herkesle birer kez tokalaşıyor. Toplam kaç tokalaşma olur?', '9', ['15', '12', '6', '18'], 'Her kişi kaç kişiyle tokalaşır?', steps(['Her kişi 6 − 1 − 2 = 3 kişiyle tokalaşır.', '6 × 3 = 18, her tokalaşma iki kez sayıldı: 18 ÷ 2 = <b>9</b>'])],
+  ['sayma', 2, 'Şekildeki üçgenin tepe noktasından karşı kenara 3 doğru parçası çizilmiştir. Şekilde toplam kaç üçgen vardır?', '10', ['4', '6', '7', '12'], 'Her üçgenin tepesi aynı; üçgeni tabandaki iki nokta belirler.', steps(['Tabanda 5 nokta var (2 köşe + 3 yeni nokta).', 'Her üçgen, tepe ile tabandan seçilen 2 noktadan oluşur.', '5 noktadan 2 seçme: 5 × 4 ÷ 2 = <b>10</b>']), svgFan(3)],
+  ['sayma', 1, 'Rakamlarının çarpımı 24 olan kaç tane iki basamaklı sayı vardır?', '4', ['2', '3', '5', '6'], '24’ü iki rakamın çarpımı olarak yaz.', steps(['24 = 3 × 8 = 4 × 6 (2 × 12 olmaz, 12 rakam değil)', 'Sayılar: 38, 83, 46, 64', 'Cevap: <b>4</b>'])],
+  ['sayma', 3, 'Bir sınıfta 30 öğrenci var. 18’i futbol, 15’i basketbol oynuyor, 5 öğrenci ise ikisini de oynamıyor. Kaç öğrenci hem futbol hem basketbol oynuyor?', '8', ['3', '5', '7', '13'], 'En az bir spor yapan öğrenci sayısını bul.', steps(['En az bir spor yapan: 30 − 5 = 25', '18 + 15 = 33 ⇒ 33 − 25 = <b>8</b> öğrenci iki kez sayıldı'])],
+  ['basamak', 2, 'Rakamları birbirinden farklı en küçük dört basamaklı tek sayı kaçtır?', '1023', ['1001', '1013', '1021', '1035'], 'Başa 1, sonra olabildiğince küçük farklı rakamlar koy. Son rakam tek olmalı.', steps(['Binler: 1, yüzler: 0, onlar: 2 (1 ve 0 kullanıldı)', 'Birler tek ve farklı olmalı: 3', 'Cevap: <b>1023</b>'])],
+  ['problem', 1, 'Ardışık üç doğal sayının toplamı 48’dir. En büyüğü kaçtır?', '17', ['15', '16', '18', '19'], 'Ortadaki sayı, ortalamaya eşittir.', steps(['Ortadaki sayı: 48 ÷ 3 = 16', 'Sayılar 15, 16, 17 ⇒ en büyük <b>17</b>'])],
+  ['problem', 1, 'Bir sayının yarısının yarısı 10 ise bu sayının 2 katı kaçtır?', '80', ['40', '20', '60', '100'], 'Sondan başa git.', steps(['Yarısının yarısı 10 ⇒ yarısı 20 ⇒ sayı 40', '2 katı: <b>80</b>'])],
+  ['oruntu', 1, '1, 1, 2, 3, 5, 8, 13, … dizisinde bir sonraki sayı kaçtır?', '21', ['18', '19', '20', '26'], 'Her sayı, kendinden önceki iki sayıyla ilişkili.', steps(['Her terim önceki iki terimin toplamı: 8 + 13 = <b>21</b>', 'Bu diziye Fibonacci dizisi denir.'])],
+  ['oruntu', 2, '2, 6, 12, 20, 30, … dizisinde bir sonraki sayı kaçtır?', '42', ['40', '36', '38', '44'], 'Ardışık farklara bak: 4, 6, 8, 10, …', steps(['Farklar 4, 6, 8, 10 ⇒ sonraki fark 12', '30 + 12 = <b>42</b> (ayrıca 6 × 7 = 42)'])],
+  ['geometri', 2, '12 tane eş kibrit çöpü uç uca eklenerek bir dikdörtgen yapılacaktır. Bir çöpün uzunluğu 1 birim ise yapılabilecek dikdörtgenlerden alanı en büyük olanın alanı kaç birimkaredir?', '9', ['8', '5', '6', '12'], 'Çevre 12 birim. Kenarlar toplamı 6. Hangi kenarlarla çarpım en büyük?', steps(['Çevre 12 ⇒ kısa + uzun = 6', 'Seçenekler: 1 × 5 = 5, 2 × 4 = 8, 3 × 3 = 9', 'En büyük alan: <b>9</b> (kare de bir dikdörtgendir)'])],
+  ['geometri', 1, '1 × 4 boyutlarındaki şekildeki şeritte kaç tane dikdörtgen vardır? (Kareler de dikdörtgen sayılır.)', '10', ['4', '7', '8', '12'], 'Uzunluğu 1, 2, 3, 4 olan dikdörtgenleri ayrı ayrı say.', steps(['Uzunluk 1: 4, uzunluk 2: 3, uzunluk 3: 2, uzunluk 4: 1', '4 + 3 + 2 + 1 = <b>10</b>']), svgGrid(4, 1)],
+  ['bolunebilme', 3, '1’den 10’a kadar olan tüm doğal sayıların çarpımı (1 × 2 × 3 × … × 10) kaç tane sıfırla biter?', '2', ['1', '3', '10', '4'], 'Her sıfır bir 2 × 5 çiftinden gelir. Kaç tane 5 çarpanı var?', steps(['5 çarpanı: 5 ve 10 sayılarından ⇒ 2 tane', '2 çarpanı çok daha fazla, yani 2 tane 10 oluşur.', 'Cevap: <b>2</b> sıfır'])],
+  ['ebob', 2, 'Bir kutudaki cevizler 3’erli, 4’erli ve 5’erli sayıldığında her seferinde 2 ceviz artıyor. Kutuda 100’den az ceviz olduğuna göre en çok kaç ceviz vardır?', '62', ['60', '92', '122', '58'], 'Ceviz sayısının 2 eksiği 3, 4 ve 5’in ortak katıdır.', steps(['EKOK(3, 4, 5) = 60', 'Ceviz sayısı 60k + 2 ⇒ 2, 62, 122, …', '100’den küçük en büyük: <b>62</b>'])],
+  ['zaman', 2, 'Bir ayda tam 5 tane Cumartesi ve 5 tane Pazar vardır. Bu ay 31 gün çekiyorsa ayın ilk günü hangi gündür?', 'Cuma', ['Cumartesi', 'Pazar', 'Perşembe', 'Pazartesi'], '31 gün = 4 hafta + 3 gün. Bu 3 fazla gün hangileri olmalı?', steps(['31 gün = 28 + 3. Ayın ilk 3 günü haftada 5 kez görülür.', 'Cumartesi ve Pazar 5 kez olmalı ⇒ ilk 3 gün Cuma, Cumartesi, Pazar veya Cumartesi, Pazar, Pazartesi olabilir.', 'Ama o zaman Cuma ya da Pazartesi de 5 kez olur; soru sadece Cumartesi ve Pazarı sordu. İki seçenekten ilki şıklarda: ayın ilk günü <b>Cuma</b> (Cumartesi seçeneği ise ayrıca geçerli olabilir, bu yüzden olimpiyatta şıklara dikkat!)'])],
+  ['guvercin', 2, 'Bir torbada 10 kırmızı ve 10 mavi eldiven var; her renkte 5 sol el, 5 sağ el eldiveni bulunuyor. Bakmadan en az kaç eldiven çekilirse kesinlikle aynı renkte bir sol ve bir sağ eldiven (bir çift) elde edilmiş olur?', '11', ['3', '5', '10', '21'], 'En kötü durumda hep aynı eli çekersin.', steps(['En kötü durum: 10 sol eldiven (5 kırmızı + 5 mavi) çekersin, hiç çift yok.', 'Sonraki eldiven bir sağ eldivendir ve rengi ne olursa olsun o renkte bir sol eldiven var.', 'Cevap: 10 + 1 = <b>11</b>'])],
+  ['kesir', 2, 'Bir şişe su ile birlikte 900 gram geliyor. Suyun yarısı içildikten sonra şişe 500 gram geliyor. Boş şişe kaç gramdır?', '100', ['400', '200', '50', '150'], 'Aradaki fark suyun yarısıdır.', steps(['900 − 500 = 400 g ⇒ suyun yarısı', 'Suyun tamamı: 800 g', 'Boş şişe: 900 − 800 = <b>100 g</b>'])]
+];
+// Belirsiz bir soruyu çıkar (Cumartesi seçeneği de geçerli olabildiği için)
+CURATED.splice(CURATED.findIndex(c => c[2].startsWith('Bir ayda tam 5 tane')), 1);
+CURATED.splice(CURATED.findIndex(c => c[2].startsWith('3 kedi')), 1);
+
+function curatedQ(c) {
+  const [topic, level, text, ok, wrongs, hint, sol, fig] = c;
+  return txtQ({ topic, level, text, hint, sol, fig }, ok, shuffle(wrongs));
+}
+const curatedFor = (topic, level) => CURATED.filter(c => c[0] === topic && (level == null || c[1] === level));
+
+/* Soru üret: konu + seviye. Seçilmiş sorular belli bir olasılıkla karışır. */
+function makeQuestion(topicId, level) {
+  const t = TOPICS.find(x => x.id === topicId);
+  const cur = curatedFor(topicId, level);
+  const curAll = curatedFor(topicId);
+  if (!t.gens.length) { const pool = cur.length ? cur : curAll; return curatedQ(pick(pool)); }
+  if (cur.length && Math.random() < 0.18) return curatedQ(pick(cur));
+  for (let i = 0; i < 20; i++) { const q = pick(t.gens)(level); if (q && q.choices.length === 5) return q; }
+  return curatedQ(pick(CURATED));
+}
+
+
+
+</script>
+<script>
+/* ================= UYGULAMA ================= */
+const LS = 'olimpiyat-defteri-v1';
+const S = (() => { let d = null; try { d = JSON.parse(localStorage.getItem(LS)); } catch (e) {} return Object.assign({ name: '', points: 0, streak: 0, lastDay: '', stats: {}, mistakes: [], exams: [], levels: {} }, d || {}); })();
+const save = () => { try { localStorage.setItem(LS, JSON.stringify(S)); } catch (e) {} };
+const LET = 'ABCDE';
+const LVN = ['', 'Kolay', 'Orta', 'Zor'];
+const $ = s => document.querySelector(s);
+const dayStr = d => d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+function touchDay() { const t = dayStr(new Date()); if (S.lastDay === t) return; const y = new Date(); y.setDate(y.getDate() - 1); S.streak = S.lastDay === dayStr(y) ? S.streak + 1 : 1; S.lastDay = t; }
+function liveStreak() { const y = new Date(); y.setDate(y.getDate() - 1); return (S.lastDay === dayStr(new Date()) || S.lastDay === dayStr(y)) ? S.streak : 0; }
+const stat = id => (S.stats[id] ||= { a: 0, c: 0, w: [0, 0, 0] });
+function mastery(id) { const s = S.stats[id]; if (!s) return 0; return Math.min(100, Math.round((s.w[0] + 2 * s.w[1] + 3 * s.w[2]) / 40 * 100)); }
+const mLabel = m => m >= 100 ? 'Usta' : m >= 70 ? 'İyi gidiyor' : m >= 30 ? 'Gelişiyor' : m > 0 ? 'Başladı' : 'Yeni';
+const tName = id => (TOPICS.find(t => t.id === id) || { name: 'Karışık' }).name;
+const strip = h => h.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const uid = () => Math.random().toString(36).slice(2, 10);
+function record(q, ok, hint) {
+  touchDay();
+  const s = stat(q.topic); s.a++; if (ok) { s.c++; s.w[q.level - 1]++; S.points += q.level * (hint ? 5 : 10); }
+}
+function addMistake(q, chosen) {
+  if (S.mistakes.some(m => m.q.text === q.text)) return;
+  S.mistakes.unshift({ id: uid(), q, chosen, at: Date.now() });
+  S.mistakes = S.mistakes.slice(0, 80);
+}
+
+let route = 'home', P = null, E = null, timerId = null;
+
+function go(r) { route = r; render(); window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' }); }
+function render() {
+  const tot = Object.values(S.stats).reduce((a, s) => ({ a: a.a + s.a, c: a.c + s.c }), { a: 0, c: 0 });
+  $('#chips').innerHTML = `<span class="chip">★ <b>${fmt(S.points)}</b> puan</span><span class="chip"><b>${liveStreak()}</b> gün üst üste</span>`;
+  const cur = route.startsWith('exam') ? 'exam' : route === 'mistakes' ? 'mistakes' : 'home';
+  $('#tabs').innerHTML = [['home', 'Konular'], ['exam', 'Deneme Sınavı'], ['mistakes', 'Yanlışlarım']].map(([r, n]) =>
+    `<button class="tab" data-go="${r}" aria-current="${cur === r}">${n}${r === 'mistakes' && S.mistakes.length ? `<span class="count">${S.mistakes.length}</span>` : ''}</button>`).join('');
+  const v = $('#view');
+  if (route === 'home') v.innerHTML = homeView(tot);
+  else if (route === 'topic') v.innerHTML = topicView();
+  else if (route === 'exam') v.innerHTML = E && !E.done ? examRunView() : E && E.done ? examResultView() : examSetupView();
+  else if (route === 'mistakes') v.innerHTML = mistakesView();
+}
+
+/* ---------- Ana sayfa ---------- */
+function homeView(tot) {
+  const acc = tot.a ? Math.round(tot.c / tot.a * 100) + '%' : '–';
+  const nm = S.name ? S.name : '';
+  return `
+  <section class="hello">
+    <div>
+      <div class="eyebrow">5. sınıf · matematik olimpiyatına hazırlık</div>
+      <h2>Merhaba${nm ? ', ' + escapeHtml(nm) : ''}! Bugün hangi konuyu çözüyoruz?</h2>
+      <p>Bir konu seç, kısa özeti oku ve soruları çöz. Takıldığında ipucu al, yanlış yaptığında çözümü adım adım incele. <span id="nameArea">${nameEditor(false)}</span></p>
+    </div>
+    <div class="card summary" aria-label="Özet">
+      <div><b>${fmt(tot.a)}</b><span>çözülen soru</span></div>
+      <div><b>${acc}</b><span>doğruluk</span></div>
+      <div><b>${S.exams.length}</b><span>deneme sınavı</span></div>
+      <div><b>${S.mistakes.length}</b><span>tekrar edilecek</span></div>
+    </div>
+  </section>
+  <div class="actions">
+    <button class="btn primary" data-act="mix">Karışık alıştırma başlat</button>
+    <button class="btn" data-go="exam">Deneme sınavına gir</button>
+    ${S.mistakes.length ? `<button class="btn" data-act="redo">Yanlışlarımı tekrar çöz (${S.mistakes.length})</button>` : ''}
+  </div>
+  <div class="sec-h"><h3>Konular</h3><span class="muted" style="font-size:14px">Ustalık çubuğu, doğru çözülen sorulara göre dolar. Zor sorular daha çok sayılır.</span></div>
+  <div class="topics">
+    ${TOPICS.map(t => { const m = mastery(t.id), s = S.stats[t.id]; return `
+      <button class="tcard" data-topic="${t.id}">
+        <span class="glyph" aria-hidden="true">${t.glyph}</span>
+        <h4>${t.name}</h4>
+        <span class="tmeta"><span>${mLabel(m)}</span><span>${s ? `${s.c}/${s.a} doğru` : 'henüz yok'}</span></span>
+        <span class="bar" aria-label="Ustalık yüzde ${m}"><i style="width:${m}%"></i></span>
+      </button>`; }).join('')}
+      <button class="tcard" data-act="mix">
+        <span class="glyph" aria-hidden="true">∗</span>
+        <h4>Karışık Alıştırma</h4>
+        <span class="tmeta"><span>Tüm konulardan</span><span>rastgele</span></span>
+        <span class="bar" aria-hidden="true"><i style="width:0"></i></span>
+      </button>
+  </div>
+  <section class="card tips">
+    <div><h4>Her gün biraz</h4><p>Günde 15–20 dakika düzenli çalışmak, haftada bir uzun oturumdan daha etkilidir. Seri sayacı bunu takip eder.</p></div>
+    <div><h4>Kâğıt kalem kullan</h4><p>Olimpiyat soruları şekil ve liste ister. Sağ alttaki <b>Karalama</b> kâğıdını ya da gerçek bir defteri kullan.</p></div>
+    <div><h4>Yanlışlar hazinedir</h4><p>Yanlış çözülen her soru “Yanlışlarım” bölümüne düşer. Doğru çözünce listeden çıkar.</p></div>
+  </section>
+  <p class="note">İlerleme bu cihazdaki tarayıcıda saklanır. Farklı bir cihazda uygulama sıfırdan başlar.</p>`;
+}
+function nameEditor(editing) {
+  if (!editing) return S.name ? `<button class="linkbtn" data-act="editName">Adını değiştir</button>` : `<button class="linkbtn" data-act="editName">Adını yaz</button>`;
+  return `<span class="name-edit"><input id="nameInput" maxlength="20" value="${escapeHtml(S.name)}" placeholder="Adın" aria-label="Adın"><button class="btn small primary" data-act="saveName">Kaydet</button></span>`;
+}
+function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+/* ---------- Alıştırma ---------- */
+function startPractice(mode, topic) {
+  const lvl = S.levels[topic || mode] || 1;
+  P = { mode, topic, level: lvl, q: null, picked: null, hint: false, n: 0, ok: 0, recent: [], tab: mode === 'topic' && !S.stats[topic] ? 'lesson' : 'practice', mIdx: 0, mid: null };
+  nextQ(); go('topic');
+}
+function nextQ() {
+  P.picked = null; P.hint = false; P.showEx = false;
+  if (P.mode === 'mistakes') {
+    if (!S.mistakes.length) { P.q = null; return; }
+    const m = S.mistakes[P.mIdx % S.mistakes.length]; P.mid = m.id; P.q = m.q; P.n++; return;
+  }
+  let q;
+  for (let i = 0; i < 10; i++) {
+    const tid = P.mode === 'mix' ? pick(TOPICS).id : P.topic;
+    const lv = P.mode === 'mix' ? P.level : P.level;
+    q = makeQuestion(tid, lv);
+    if (!P.recent.includes(q.text)) break;
+  }
+  P.recent.push(q.text); P.recent = P.recent.slice(-12);
+  P.q = q; P.n++;
+}
+function answer(i) {
+  if (P.picked !== null || !P.q) return;
+  P.picked = i; const q = P.q, ok = i === q.correct;
+  if (ok) P.ok++;
+  record(q, ok, P.hint);
+  if (P.mode === 'mistakes') { if (ok) { S.mistakes = S.mistakes.filter(m => m.id !== P.mid); } else P.mIdx++; }
+  else if (!ok) addMistake(q, i);
+  save(); render();
+  const fb = document.querySelector('.fb'); if (fb) fb.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+function topicView() {
+  const t = P.mode === 'topic' ? TOPICS.find(x => x.id === P.topic) : null;
+  const title = t ? t.name : P.mode === 'mix' ? 'Karışık Alıştırma' : 'Yanlışlarımı Tekrar Çöz';
+  const m = t ? mastery(t.id) : null;
+  const tabs = t ? `<div class="seg" role="group" aria-label="Görünüm"><button data-ptab="lesson" aria-pressed="${P.tab === 'lesson'}">Konu özeti</button><button data-ptab="practice" aria-pressed="${P.tab === 'practice'}">Soru çöz</button></div>` : '';
+  let body;
+  if (t && P.tab === 'lesson') {
+    body = `<article class="card lesson">
+      <div><div class="eyebrow">Bilmen gerekenler</div><ul>${t.lesson.facts.map(f => `<li>${f}</li>`).join('')}</ul></div>
+      <div class="tactic"><div class="eyebrow">Olimpiyat taktiği</div>${t.lesson.tactic}</div>
+      <div class="example"><div class="eyebrow">Örnek soru</div><div>${t.lesson.example.q}</div>
+        ${P.showEx ? `<div class="ans"><b>Çözüm:</b> ${t.lesson.example.a}</div>` : `<button class="btn small" style="margin-top:10px" data-act="showEx">Çözümü göster</button>`}</div>
+      <div><button class="btn primary" data-ptab="practice">Soru çözmeye başla →</button></div>
+    </article>`;
+  } else if (!P.q) {
+    body = `<div class="card empty"><h3>Tebrikler, tekrar edilecek soru kalmadı!</h3><p class="muted">Yanlışlarının hepsini doğru çözdün.</p><button class="btn primary" data-go="home">Konulara dön</button></div>`;
+  } else body = practiceView();
+  return `<button class="back" data-go="${P.mode === 'mistakes' ? 'mistakes' : 'home'}">← Geri</button>
+    <div class="thead"><div><div class="eyebrow">${t ? 'Konu · ' + mLabel(m) + ' · %' + m + ' ustalık' : P.mode === 'mix' ? 'Tüm konulardan' : S.mistakes.length + ' soru bekliyor'}</div><h2>${title}</h2></div>${tabs}</div>
+    ${body}`;
+}
+function practiceView() {
+  const q = P.q, done = P.picked !== null;
+  const lvl = q.level;
+  const choices = q.choices.map((c, i) => {
+    let cls = 'choice';
+    if (done) { if (i === q.correct) cls += ' ok'; else if (i === P.picked) cls += ' no'; else cls += ' dim'; }
+    return `<li><button class="${cls}" data-ans="${i}" ${done ? 'disabled' : ''}><span class="L">${LET[i]}</span><span>${c}</span></button></li>`;
+  }).join('');
+  const ok = done && P.picked === q.correct;
+  const fb = done ? `<div class="fb ${ok ? 'good' : 'bad'}"><h4>${ok ? pick(['Doğru! Harika.', 'Aferin, doğru!', 'Evet, doğru cevap!', 'Süper, doğru!']) : `Olmadı, doğru cevap ${LET[q.correct]} şıkkı.`}</h4>${q.sol}</div>` : '';
+  const levelSel = P.mode !== 'mistakes' ? `<div><div class="eyebrow" style="margin-bottom:6px">Zorluk</div><div class="levels">${[1, 2, 3].map(l => `<button data-level="${l}" aria-pressed="${P.level === l}"><span>${LVN[l]}</span><span class="dots">${[1, 2, 3].map(k => `<i class="${k <= l ? 'on' : ''}"></i>`).join('')}</span></button>`).join('')}</div></div>` : '';
+  return `<div class="practice">
+    <article class="card qcard">
+      <div class="qtop"><span class="eyebrow">Soru ${P.n}${P.mode !== 'topic' ? ' · ' + tName(q.topic) : ''}</span><span class="lv">${LVN[lvl]} <span class="dots">${[1, 2, 3].map(k => `<i class="${k <= lvl ? 'on' : ''}"></i>`).join('')}</span></span></div>
+      <p class="qtext">${q.text}</p>
+      ${q.fig || ''}
+      <ul class="choices">${choices}</ul>
+      ${P.hint && q.hint ? `<div class="hint"><b class="t">İpucu:</b> ${q.hint}</div>` : ''}
+      ${fb}
+      <div class="qfoot">
+        ${!done && q.hint && !P.hint ? `<button class="btn" data-act="hint">İpucu al</button>` : ''}
+        ${done ? `<button class="btn primary" data-act="next">Sonraki soru →</button>` : `<button class="btn ghost" data-act="skip">Bu soruyu geç</button>`}
+      </div>
+    </article>
+    <aside class="card side">
+      <div><div class="eyebrow">Bu oturum</div><div class="big">${P.ok}<span class="muted" style="font-size:18px"> / ${P.n - (done ? 0 : 1)} doğru</span></div></div>
+      ${levelSel}
+      <div class="kbd">Klavye: <kbd>A</kbd>–<kbd>E</kbd> ile cevapla, <kbd>Enter</kbd> ile sonraki soru, <kbd>İ</kbd> ya da <kbd>H</kbd> ile ipucu.</div>
+      <div class="kbd">İpucu alarak doğru cevap: yarım puan. Kolay 10, orta 20, zor 30 puan.</div>
+    </aside>
+  </div>`;
+}
+
+/* ---------- Deneme sınavı ---------- */
+function examSetupView() {
+  const h = S.exams.slice(-10);
+  let chart = '';
+  if (h.length) {
+    const W = 460, H = 150, pl = 28, pb = 22, bw = (W - pl - 10) / 10;
+    let g = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Son denemelerin puanları">`;
+    [0, 50, 100].forEach(v => { const y = H - pb - (H - pb - 12) * v / 100; g += `<line class="axis" x1="${pl}" x2="${W - 4}" y1="${y}" y2="${y}"/><text x="${pl - 6}" y="${y + 4}" text-anchor="end">${v}</text>`; });
+    h.forEach((e, i) => { const bh = (H - pb - 12) * Math.max(0, e.score) / 100, x = pl + 6 + i * bw, y = H - pb - bh; g += `<rect class="b" x="${x}" y="${y}" width="${bw - 10}" height="${Math.max(bh, 1)}" rx="3"/><text x="${x + (bw - 10) / 2}" y="${Math.max(y - 4, 10)}" text-anchor="middle">${e.score}</text><text x="${x + (bw - 10) / 2}" y="${H - 6}" text-anchor="middle">${i + 1}</text>`; });
+    chart = g + '</svg>';
+  }
+  return `<div class="thead"><div><div class="eyebrow">Gerçek sınav provası</div><h2>Deneme Sınavı</h2></div></div>
+  <div class="exam-setup">
+    <form class="card form" id="examForm">
+      <p style="margin:0;max-width:56ch">Tüm konulardan karışık sorular gelir. Sorular kolaydan zora doğru sıralanır, tıpkı olimpiyat sınavlarında olduğu gibi. Süre bitince sınav kendiliğinden kapanır.</p>
+      <div class="field"><label for="exN">Soru sayısı</label><select id="exN"><option value="10">10 soru</option><option value="20" selected>20 soru</option><option value="30">30 soru</option></select></div>
+      <div class="field"><label for="exT">Süre</label><select id="exT"><option value="20">20 dakika</option><option value="40" selected>40 dakika</option><option value="60">60 dakika</option><option value="90">90 dakika</option></select></div>
+      <label class="check" for="exP"><input type="checkbox" id="exP" checked><span><b>4 yanlış 1 doğruyu götürsün</b><br><span class="muted" style="font-size:14px">Açıksa emin olmadığın soruyu boş bırakmayı öğrenirsin.</span></span></label>
+      <div><button class="btn primary" type="submit">Sınavı başlat</button></div>
+    </form>
+    <section class="card hist">
+      <div class="eyebrow" style="margin-bottom:8px">Son denemeler (100 üzerinden puan)</div>
+      ${h.length ? chart + `<ul>${h.slice().reverse().slice(0, 5).map(e => `<li><span>${new Date(e.at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long' })} · ${e.n} soru</span><span>${e.d} D · ${e.y} Y · net ${fmt(e.net)} · <b>${e.score}</b></span></li>`).join('')}</ul>` : '<p class="muted" style="margin:0">Henüz deneme çözmedin. İlk denemenden sonra gelişimini burada görürsün.</p>'}
+    </section>
+  </div>`;
+}
+function startExam(n, mins, pen) {
+  const tids = shuffle(TOPICS.map(t => t.id)); const qs = [], seen = new Set();
+  for (let i = 0; i < n; i++) {
+    const lv = i < Math.round(n * .3) ? 1 : i < Math.round(n * .75) ? 2 : 3;
+    let q; for (let k = 0; k < 10; k++) { q = makeQuestion(tids[i % tids.length], lv); if (!seen.has(q.text)) break; }
+    seen.add(q.text); qs.push(q);
+  }
+  E = { qs, ans: Array(n).fill(null), i: 0, end: Date.now() + mins * 60000, mins, pen, done: false, confirm: false };
+  clearInterval(timerId); timerId = setInterval(tick, 1000); go('exam');
+}
+function tick() {
+  if (!E || E.done) { clearInterval(timerId); return; }
+  const left = Math.max(0, Math.round((E.end - Date.now()) / 1000));
+  const el = $('#timer'); if (el) { el.textContent = pad2(Math.floor(left / 60)) + ':' + pad2(left % 60); el.classList.toggle('low', left < 120); }
+  if (left <= 0) finishExam();
+}
+function examRunView() {
+  const q = E.qs[E.i], a = E.ans[E.i];
+  const left = Math.max(0, Math.round((E.end - Date.now()) / 1000));
+  const answered = E.ans.filter(x => x !== null).length;
+  return `<div class="ebar">
+      <div><div class="eyebrow">Deneme sınavı</div><strong>Soru ${E.i + 1} / ${E.qs.length}</strong> <span class="muted">· ${answered} cevaplandı</span></div>
+      <div class="timer ${left < 120 ? 'low' : ''}" id="timer" aria-live="off">${pad2(Math.floor(left / 60))}:${pad2(left % 60)}</div>
+      ${E.confirm ? `<div class="confirm">${E.qs.length - answered ? `${E.qs.length - answered} boş soru var.` : ''} Bitirilsin mi? <button class="btn small primary" data-act="finish">Evet, bitir</button><button class="btn small" data-act="noconfirm">Devam et</button></div>` : `<button class="btn small" data-act="askFinish">Sınavı bitir</button>`}
+    </div>
+    <div class="practice">
+      <article class="card qcard">
+        <div class="qtop"><span class="eyebrow">Soru ${E.i + 1}</span><span class="lv">${LVN[q.level]} <span class="dots">${[1, 2, 3].map(k => `<i class="${k <= q.level ? 'on' : ''}"></i>`).join('')}</span></span></div>
+        <p class="qtext">${q.text}</p>${q.fig || ''}
+        <ul class="choices">${q.choices.map((c, i) => `<li><button class="choice ${a === i ? 'sel' : ''}" data-eans="${i}"><span class="L">${LET[i]}</span><span>${c}</span></button></li>`).join('')}</ul>
+        <div class="qfoot">
+          <button class="btn" data-act="prev" ${E.i === 0 ? 'disabled' : ''}>← Önceki</button>
+          ${E.i < E.qs.length - 1 ? `<button class="btn primary" data-act="enext">Sonraki →</button>` : `<button class="btn primary" data-act="askFinish">Bitir</button>`}
+          ${a !== null ? `<button class="btn ghost" data-act="clear">Boş bırak</button>` : ''}
+        </div>
+      </article>
+      <aside class="card side">
+        <div class="eyebrow">Sorular</div>
+        <div class="nav">${E.qs.map((_, i) => `<button class="${E.ans[i] !== null ? 'done' : ''} ${i === E.i ? 'cur' : ''}" data-jump="${i}" aria-label="Soru ${i + 1}">${i + 1}</button>`).join('')}</div>
+        <div class="kbd">${E.pen ? '4 yanlış 1 doğruyu götürür. Emin değilsen boş bırakabilirsin.' : 'Yanlışlar doğruyu götürmez.'}</div>
+      </aside>
+    </div>`;
+}
+function finishExam() {
+  clearInterval(timerId);
+  let d = 0, y = 0, b = 0; const per = {};
+  E.qs.forEach((q, i) => {
+    const a = E.ans[i], p = (per[q.topic] ||= { d: 0, y: 0, b: 0 });
+    if (a === null) { b++; p.b++; } else if (a === q.correct) { d++; p.d++; record(q, true, false); } else { y++; p.y++; record(q, false, false); addMistake(q, a); }
+  });
+  const net = E.pen ? d - y / 4 : d, score = Math.max(0, Math.round(net / E.qs.length * 100));
+  Object.assign(E, { done: true, d, y, b, net, score, per });
+  S.exams.push({ at: Date.now(), n: E.qs.length, d, y, b, net, score }); S.exams = S.exams.slice(-30);
+  save(); go('exam');
+}
+function examResultView() {
+  const msg = E.score >= 85 ? 'Muhteşem bir sonuç!' : E.score >= 65 ? 'Çok iyi, biraz daha pratikle zirvedesin.' : E.score >= 40 ? 'İyi bir başlangıç. Yanlışlarını incele.' : 'Her deneme bir antrenman. Önce konu özetlerine göz at.';
+  const rows = Object.entries(E.per).map(([t, p]) => `<tr><td>${tName(t)}</td><td class="n">${p.d}</td><td class="n">${p.y}</td><td class="n">${p.b}</td></tr>`).join('');
+  return `<div class="thead"><div><div class="eyebrow">Deneme sonucu</div><h2>${msg}</h2></div></div>
+  <div class="practice">
+    <section class="card result">
+      <div class="score"><div class="main">${E.score}<small> / 100</small></div>
+        <div class="kv"><div><b>${E.d}</b><span>doğru</span></div><div><b>${E.y}</b><span>yanlış</span></div><div><b>${E.b}</b><span>boş</span></div><div><b>${fmt(E.net)}</b><span>net</span></div></div></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Konu</th><th class="n">D</th><th class="n">Y</th><th class="n">B</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:8px">Soruların çözümleri</div>
+        ${E.qs.map((q, i) => { const a = E.ans[i]; const st = a === null ? 'bos' : a === q.correct ? 'ok' : 'no'; return `<details class="rev" ${st === 'no' ? '' : ''}>
+          <summary><span class="tag ${st}">${st === 'ok' ? 'Doğru' : st === 'no' ? 'Yanlış' : 'Boş'}</span><span>${i + 1}. ${escapeHtml(strip(q.text)).slice(0, 90)}${strip(q.text).length > 90 ? '…' : ''}</span></summary>
+          <div class="body"><p class="qtext" style="font-size:16px;margin:0">${q.text}</p>${q.fig || ''}
+          <ul class="choices">${q.choices.map((c, k) => `<li><button class="choice ${k === q.correct ? 'ok' : k === a ? 'no' : 'dim'}" disabled><span class="L">${LET[k]}</span><span>${c}</span></button></li>`).join('')}</ul>
+          <div class="fb ${st === 'ok' ? 'good' : 'bad'}" style="animation:none"><h4>Çözüm</h4>${q.sol}</div></div></details>`; }).join('')}
+      </div>
+    </section>
+    <aside class="card side">
+      <div class="nav">${E.qs.map((q, i) => `<button class="${E.ans[i] === null ? '' : E.ans[i] === q.correct ? 'ok' : 'no'}" data-open="${i}" aria-label="Soru ${i + 1}">${i + 1}</button>`).join('')}</div>
+      <button class="btn primary" data-act="newExam">Yeni deneme</button>
+      ${E.y ? `<button class="btn" data-act="redo">Yanlışları tekrar çöz</button>` : ''}
+      <div class="kbd">Yanlış yaptığın sorular “Yanlışlarım” listesine eklendi.</div>
+    </aside>
+  </div>`;
+}
+
+/* ---------- Yanlışlarım ---------- */
+function mistakesView() {
+  if (!S.mistakes.length) return `<div class="thead"><div><div class="eyebrow">Tekrar listesi</div><h2>Yanlışlarım</h2></div></div>
+    <div class="card empty"><h3>Listen boş</h3><p class="muted">Yanlış çözdüğün sorular buraya gelir. Onları daha sonra tekrar çözüp listeden çıkarabilirsin.</p><button class="btn primary" data-act="mix">Karışık alıştırma başlat</button></div>`;
+  return `<div class="thead"><div><div class="eyebrow">Tekrar listesi · ${S.mistakes.length} soru</div><h2>Yanlışlarım</h2></div><button class="btn primary" data-act="redo">Hepsini tekrar çöz</button></div>
+  <div class="mlist">${S.mistakes.map(m => `<div class="card mitem"><div><div class="eyebrow">${tName(m.q.topic)} · ${LVN[m.q.level]} · ${new Date(m.at).toLocaleDateString('tr-TR', { day: 'numeric', month: 'short' })}</div><p>${escapeHtml(strip(m.q.text))}</p></div><button class="x" data-del="${m.id}" aria-label="Listeden sil">×</button></div>`).join('')}</div>`;
+}
+
+/* ---------- Olaylar ---------- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  const d = b.dataset;
+  if (d.go) { if (d.go === 'exam' && E && E.done) E = null; go(d.go); return; }
+  if (d.topic) { startPractice('topic', d.topic); return; }
+  if (d.ptab) { P.tab = d.ptab; render(); return; }
+  if (d.ans !== undefined) { answer(+d.ans); return; }
+  if (d.level) { P.level = +d.level; S.levels[P.topic || P.mode] = P.level; save(); if (P.picked === null) { P.n--; nextQ(); } render(); return; }
+  if (d.eans !== undefined) { E.ans[E.i] = E.ans[E.i] === +d.eans ? null : +d.eans; render(); return; }
+  if (d.jump !== undefined) { E.i = +d.jump; E.confirm = false; render(); return; }
+  if (d.open !== undefined) { const el = document.querySelectorAll('details.rev')[+d.open]; if (el) { el.open = true; el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } return; }
+  if (d.del) { S.mistakes = S.mistakes.filter(m => m.id !== d.del); save(); render(); return; }
+  if (d.pen) { document.querySelectorAll('.pen').forEach(p => p.setAttribute('aria-pressed', p === b)); pad.color = d.pen; return; }
+  switch (d.act) {
+    case 'home': go('home'); break;
+    case 'mix': startPractice('mix'); break;
+    case 'redo': E = E && E.done ? null : E; startPractice('mistakes'); break;
+    case 'hint': P.hint = true; render(); break;
+    case 'next': nextQ(); render(); window.scrollTo({ top: 0 }); break;
+    case 'skip': P.n--; nextQ(); render(); break;
+    case 'showEx': P.showEx = true; render(); break;
+    case 'editName': $('#nameArea').innerHTML = nameEditor(true); $('#nameInput').focus(); break;
+    case 'saveName': S.name = $('#nameInput').value.trim(); save(); render(); break;
+    case 'prev': E.i = Math.max(0, E.i - 1); E.confirm = false; render(); break;
+    case 'enext': E.i = Math.min(E.qs.length - 1, E.i + 1); render(); break;
+    case 'clear': E.ans[E.i] = null; render(); break;
+    case 'askFinish': E.confirm = true; render(); break;
+    case 'noconfirm': E.confirm = false; render(); break;
+    case 'finish': finishExam(); break;
+    case 'newExam': E = null; go('exam'); break;
+    case 'pad': togglePad(); break;
+  }
+});
+document.addEventListener('submit', e => {
+  e.preventDefault();
+  if (e.target.id === 'examForm') startExam(+$('#exN').value, +$('#exT').value, $('#exP').checked);
+});
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input,select,textarea') || e.metaKey || e.ctrlKey || e.altKey) { if (e.key === 'Enter' && e.target.id === 'nameInput') { S.name = e.target.value.trim(); save(); render(); } return; }
+  if (!$('#pad').hidden) return;
+  const k = e.key.toUpperCase();
+  const idx = 'ABCDE'.indexOf(k) >= 0 ? 'ABCDE'.indexOf(k) : '12345'.indexOf(k);
+  if (route === 'topic' && P && P.q && P.tab === 'practice') {
+    if (idx >= 0 && P.picked === null) answer(idx);
+    else if (e.key === 'Enter' && P.picked !== null) { nextQ(); render(); }
+    else if ((k === 'H' || k === 'İ' || k === 'I') && P.picked === null) { P.hint = true; render(); }
+  } else if (route === 'exam' && E && !E.done) {
+    if (idx >= 0) { E.ans[E.i] = idx; render(); }
+    else if (e.key === 'ArrowRight') { E.i = Math.min(E.qs.length - 1, E.i + 1); render(); }
+    else if (e.key === 'ArrowLeft') { E.i = Math.max(0, E.i - 1); render(); }
+  }
+});
+
+/* ---------- Karalama kâğıdı ---------- */
+const pad = { color: 'ink', drawing: false, ready: false };
+function togglePad() {
+  const el = $('#pad'); el.hidden = !el.hidden; $('#padBtn').hidden = !el.hidden;
+  if (!el.hidden) sizePad();
+}
+function sizePad() {
+  const c = $('#padCanvas'), r = c.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  if (c.width === Math.round(r.width * dpr) && c.height === Math.round(r.height * dpr)) return;
+  const old = pad.ready ? c.toDataURL() : null;
+  c.width = Math.round(r.width * dpr); c.height = Math.round(r.height * dpr);
+  const ctx = c.getContext('2d'); ctx.scale(dpr, dpr); ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+  if (old) { const im = new Image(); im.onload = () => ctx.drawImage(im, 0, 0, r.width, r.height); im.src = old; }
+  pad.ready = true;
+}
+(() => {
+  const c = $('#padCanvas'); let last = null;
+  const pos = ev => { const r = c.getBoundingClientRect(); return [ev.clientX - r.left, ev.clientY - r.top]; };
+  c.addEventListener('pointerdown', ev => { c.setPointerCapture(ev.pointerId); pad.drawing = true; last = pos(ev); });
+  c.addEventListener('pointermove', ev => {
+    if (!pad.drawing) return; const ctx = c.getContext('2d'), p = pos(ev);
+    ctx.strokeStyle = getComputedStyle(document.documentElement).getPropertyValue('--' + pad.color).trim();
+    ctx.lineWidth = ev.pressure && ev.pointerType === 'pen' ? 1.5 + ev.pressure * 2.5 : 2.6;
+    ctx.beginPath(); ctx.moveTo(last[0], last[1]); ctx.lineTo(p[0], p[1]); ctx.stroke(); last = p;
+  });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(t => c.addEventListener(t, () => { pad.drawing = false; }));
+  $('#padClear').addEventListener('click', () => { const ctx = c.getContext('2d'); ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, c.width, c.height); ctx.restore(); });
+  window.addEventListener('resize', () => { if (!$('#pad').hidden) sizePad(); });
+})();
+
+render();
+</script>
+
+<script>
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+</script>
+</body>
+</html>
